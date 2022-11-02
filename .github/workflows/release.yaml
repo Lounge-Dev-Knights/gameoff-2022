@@ -1,0 +1,214 @@
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  # Godot version to use for build
+  GODOT_VERSION: 3.5.1
+  # Prerelease if applicable (e.g beta1), else empty
+  GODOT_PRERELEASE: ""
+  # Prefix of the release asset (zip files)
+  PACKAGE_PREFIX: ${{ github.event.repository.name }} # use gh repository name
+
+  # Version of the itch butler cli used to push
+  BUTLER_VERSION: 15.21.0
+  # Game title (url) on itch page
+  GAME_TITLE: ${{ github.event.repository.name }} # use gh repository name
+  # Username on itch
+  ITCH_USER: ${{ github.repository_owner }}
+
+jobs:
+  DefineVersion:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - id: version
+        run: echo "version=$(date +%Y.%m.%d).$GITHUB_RUN_NUMBER" >> $GITHUB_OUTPUT
+  
+  # job id, can be anything
+  BuildOnLinux:
+    needs: [Version]
+    runs-on: ubuntu-latest
+    name: Export Game
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: Cache godot binaries and templates
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          ./bin
+          /home/runner/.local/share/godot/templates
+          /Users/runner/Library/Application Support/Godot/templates
+        key: godot-${{ env.GODOT_VERSION }}-${{ env.GODOT_PRERELEASE }}-linux
+
+    - name: Install Godot + Templates
+      if: steps.cache.outputs.cache-hit != 'true'
+      # run: zx ./scripts/download-godot.mjs ${{env.GODOT_VERSION}}
+      run: |
+        mkdir bin
+
+        # Prereleases have the prerelease identifier (e.g. 'beta1') while stable releases have 'stable'
+        SUFFIX=$(if [ -z "$GODOT_PRERELEASE" ];then echo stable; else echo $GODOT_PRERELEASE;  fi)
+
+        BASE_URL=https://downloads.tuxfamily.org/godotengine/$GODOT_VERSION/$GODOT_PRERELEASE/Godot_v$GODOT_VERSION-$SUFFIX
+        
+        # Download and extract godot binary
+        curl $BASE_URL"_linux_headless.64.zip" -o bin/godot.zip
+        7z x -y bin/godot.zip -obin
+
+        # Download and extract export templates
+        curl $BASE_URL"_export_templates.tpz" -o bin/templates.zip
+        7z e -y bin/templates.zip -o"/home/runner/.local/share/godot/templates/$GODOT_VERSION.$SUFFIX"
+      env:
+        GODOT_VERSION: ${{ env.GODOT_VERSION }}
+        GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}
+
+    - run: mkdir -p /tmp/build
+
+    - name: Build for linux
+      run: |
+        ./bin/Godot_v*_linux_headless.64 --no-window --export linux /tmp/build/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-linux.x86_64
+        7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-linux.zip /tmp/build/*
+
+    - name: Build html export
+      run: |
+        ./bin/Godot_v*_linux_headless.64 --no-window --export html /tmp/build/index.html
+        7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-html.zip /tmp/build/*
+
+      # Build windows export on linux, because windows is dumb
+    - name: Build windows export
+      run: |
+        ./bin/Godot_v*_linux_headless.64 --no-window --export windows /tmp/build/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-windows.exe
+        7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-windows.zip /tmp/build/*
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: release
+        path: /tmp/release/*.zip
+
+
+
+  BuildOnMac:
+    needs: [DefineVersion]
+    runs-on: macos-latest
+    name: Export Game (macos)
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: Cache godot binaries and templates
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: |
+          ./bin
+          /home/runner/.local/share/godot/templates
+          /Users/runner/Library/Application Support/Godot/templates
+        key: godot-${{ env.GODOT_VERSION }}-${{ env.GODOT_PRERELEASE }}-macos
+
+    - name: Install Godot + Templates
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        mkdir bin
+
+        # Prereleases have the prerelease identifier (e.g. 'beta1') while stable releases have 'stable'
+        SUFFIX=$(if [ -z "$GODOT_PRERELEASE" ];then echo stable; else echo $GODOT_PRERELEASE;  fi)
+
+        BASE_URL=https://downloads.tuxfamily.org/godotengine/$GODOT_VERSION/$GODOT_PRERELEASE/Godot_v$GODOT_VERSION-$SUFFIX
+        
+        # Download and extract godot binary
+        curl $BASE_URL"_osx.universal.zip" -o bin/godot.zip
+        7z x -y bin/godot.zip -obin
+
+        # Download and extract export templates
+        curl $BASE_URL"_export_templates.tpz" -o bin/templates.zip
+        7z e -y bin/templates.zip -o"/Users/runner/Library/Application Support/Godot/templates/$GODOT_VERSION.$SUFFIX"
+      env:
+        GODOT_VERSION: ${{ env.GODOT_VERSION }}
+        GODOT_PRERELEASE: ${{ env.GODOT_PRERELEASE }}
+
+    - run: mkdir -p /tmp/build
+
+    - name: Build for macos
+      run: |
+        ./bin/Godot.app/Contents/MacOS/Godot --no-window --export macos /tmp/build/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-macos.dmg
+        7z a -sdel /tmp/release/${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-macos.zip /tmp/build/*
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: release
+        path: /tmp/release/*.zip
+
+
+  FinishRelease:
+    needs: [DefineVersion, BuildOnLinux, BuildOnMac]
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+      # Ensure that you get the entire project history
+      with:
+        fetch-depth: 0
+      # separate step to extract the version from the tag name
+    - uses: actions/download-artifact@v3
+      id: download
+      with:
+        name: release
+        path: ./release/
+    - run: ls ./release -lah
+    - id: create-release
+      run: |
+        gh release create $VERSION --target $TARGET --generate-notes release/*
+      env:
+        VERSION: ${{ needs.DefineVersion.outputs.version }}
+        TARGET: ${{ github.sha }}
+
+
+  publish_to_itch:
+    strategy:
+      matrix:
+        target: [html, windows, macos, linux]
+    runs-on: ubuntu-latest
+    steps:
+      # checkout repo, so that gh cli works correctly
+      - name: checkout
+        uses: actions/checkout@v2
+        
+      # download asset for effective 
+      - run: gh release download ${{ needs.DefineVersion.outputs.version }} -p "${FILE}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: ${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-${{matrix.target}}.zip
+
+      # download specified butler version
+      - name: setup butler
+        id: setup-butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/${BUTLER_VERSION}/archive/default
+          unzip butler.zip
+          # GNU unzip tends to not set the executable bit even though it's set in the .zip
+          chmod +x butler
+          # just a sanity check run (and also helpful in case you're sharing CI logs)
+          ./butler -V
+        env:
+          BUTLER_VERSION: ${{env.BUTLER_VERSION}}
+
+      - name: deploy to itch.io
+        id: deploy
+        run: |
+          ls -lah
+          ./butler push "${FILE}" "${ITCH_USER}/${ITCH_GAME}:${CHANNEL}" --userversion ${{ needs.DefineVersion.outputs.version }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: ${{ matrix.TARGET }}
+          ITCH_GAME: ${{ env.GAME_TITLE }}
+          ITCH_USER: ${{ env.ITCH_USER }}
+          FILE: ${{ env.PACKAGE_PREFIX }}-${{ needs.DefineVersion.outputs.version }}-${{matrix.target}}.zip
