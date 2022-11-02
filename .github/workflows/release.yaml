@@ -30,7 +30,7 @@ jobs:
   
   # job id, can be anything
   BuildOnLinux:
-    needs: [Version]
+    needs: [DefineVersion]
     runs-on: ubuntu-latest
     name: Export Game
 
@@ -173,6 +173,7 @@ jobs:
 
 
   publish_to_itch:
+    needs: [DefineVersion, FinishRelease]
     strategy:
       matrix:
         target: [html, windows, macos, linux]
