@@ -9,3 +9,7 @@
 # Mono-specific ignores
 .mono/
 data_*/
+
+# custom
+/build/*
+!/build/.gdignore
