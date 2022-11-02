@@ -206,7 +206,6 @@ jobs:
       - name: deploy to itch.io
         id: deploy
         run: |
-          ls -lah
           ./butler push "${FILE}" "${ITCH_USER}/${ITCH_GAME}:${CHANNEL}" --userversion ${{ needs.DefineVersion.outputs.version }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}
