@@ -1,6 +1,6 @@
 Elefant im Porzellanladen
 
-Gespielt wird der Besitzer/Angestellter des Porzellanladens
+Gespielt wird als Besitzer*in/Angestellte*r des Porzellanladens
 Ein gutbetuchter Kunde hat einen Termin in X min
 
 *Top-down Ansicht*
@@ -22,3 +22,13 @@ Du kannst den Elefant beeinflussen *Intelligenz muss programmiert werden* :
 
 Items liegen im Prozellanladen oder können bei anderen Läden eingekauft werden
 
+
+
+Körperteile
+
+Stickhuman fight
+Player startet als vollständiger Stickmhuman.
+Kampf vs anderer Stickhuman NPC (possible?)
+Beim Kampf fallen Körperteile ab, welche der Gewinner einsammelt.
+Man Kämpf gegen ungefähr gleich starke NPC (bez. Anzahl Körperteile)
+Hat man mehr Körperteile als man braucht kann mann diese gegen bessere (z.B. Bein mit Panzer) tauschen.
