@@ -1,0 +1,24 @@
+Elefant im Porzellanladen
+
+Gespielt wird der Besitzer/Angestellter des Porzellanladens
+Ein gutbetuchter Kunde hat einen Termin in X min
+
+*Top-down Ansicht*
+
+Eine Mücke fliegt umher, du willst sie loswerden da sie nervt
+Fenster öffnen, Versuchen die Mücke herauszuscheuchen. Keine Chance, Mücke bleibt
+
+Eine antike chinesische Fliegenklatsche liegt herum.
+Du ergreifst ihn und erschlägst die Mücke -> eine Elefant erscheint
+(Beispiel für ein Intro, bei mehreren Levels unterschiedliche Intros? Unterschiedliche Tiere die sich ähnlichen Situationen befinden?)
+
+Du musst den Elefant aus dem Laden bringen bevor der Kunde kommt und dabei möglichst wenig Schaden anrichten
+
+Du kannst den Elefant beeinflussen *Intelligenz muss programmiert werden* :
+    Essen
+        lockt ihn an, je nach dem was bzw. wie viel mehr oder weniger.
+        vergorene Früchte hat er am liebsten, machen ihn allerding besoffen
+    Musik/Geräusche sind je nach dem welcheberuhigend, verängstigend, agressiv machend
+
+Items liegen im Prozellanladen oder können bei anderen Läden eingekauft werden
+
