@@ -1,0 +1,6 @@
+- multiple characters helping each other to make progress
+	- Runny Nose is a running nose who can use his snut as grappling hook
+	- Joe Longfinger can stretch over a ledge to form a bridge
+		- can reach things far away
+	- Al'Ears 
+- switch between characters to complete levels

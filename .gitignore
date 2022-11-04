@@ -13,3 +13,4 @@ data_*/
 # custom
 /build/*
 !/build/.gdignore
+/docs/.obsidian/
