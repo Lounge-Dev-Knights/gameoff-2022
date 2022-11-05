@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="gameoff-2022"
-run/main_scene="res://Titlescreen.tscn"
+run/main_scene="res://Testlevel.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -22,6 +22,14 @@ SoundEngine="*res://sound/SoundEngine.gd"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+2d_physics/layer_1="elephant"
+2d_physics/layer_2="character"
+2d_physics/layer_3="items"
+2d_physics/layer_4="walls"
+2d_physics/layer_5="stairs"
 
 [physics]
 
