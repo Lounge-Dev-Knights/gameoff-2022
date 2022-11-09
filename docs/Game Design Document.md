@@ -1,5 +1,5 @@
 ## Story
-- Mosquito turns into elephant
+- TBD
 
 ## Characters
 - Elephant 
@@ -26,6 +26,7 @@
 - Stuff to get rid of the elephant
 	- Food
 		- Chili
+		- Fruits
 		- can only be used once?
 	- Sound to influence elephants mood
 	- Mice to scare it
@@ -43,6 +44,10 @@
 - Furniture
 - Shelfs
 - Staircase
+- Items
+  - Chili
+  - Fruits
+  - Mice
 
 ## Sound and Music
 - Shop music
