@@ -19,6 +19,11 @@ config/icon="res://icon.png"
 MusicEngine="*res://sound/MusicEngine.gd"
 SoundEngine="*res://sound/SoundEngine.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

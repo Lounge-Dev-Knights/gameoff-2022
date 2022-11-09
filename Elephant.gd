@@ -43,6 +43,7 @@ func _process_state(delta: float) -> void:
 	
 	match state:
 		State.IDLE:
+			$LN_4elephant/AnimationPlayer.play("rest")
 			velocity *= (0.9 * delta)
 			check_items()
 			if randf() < 0.3 * delta:
@@ -59,6 +60,7 @@ func _process_state(delta: float) -> void:
 				
 				# target = Vector2(rand_range(0, 640), rand_range(0, 300))
 		State.WALKING:
+			$LN_4elephant/AnimationPlayer.play("walk")
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			

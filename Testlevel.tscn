@@ -127,3 +127,6 @@ position = Vector2( 560, 304 )
 
 [node name="Wall32" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 688, 304 )
+
+[node name="Apple4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464, 144 )
