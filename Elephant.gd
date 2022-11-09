@@ -21,6 +21,7 @@ func _ready() -> void:
 	randomize()
 	$FreeTarget.set_as_toplevel(true)
 	pass # Replace with function body.
+	MusicEngine.play_song("Music1")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

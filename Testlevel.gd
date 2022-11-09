@@ -24,4 +24,3 @@ func _on_ItemList_item_selected(index: int) -> void:
 		'Apple':
 			active_item = preload("res://Apple.tscn")
 	
-	
