@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/club2.ogg-bf0d6567d41be5db72263197323437ff.oggstr"
+
+[deps]
+
+source_file="res://sound/music/club2.ogg"
+dest_files=[ "res://.import/club2.ogg-bf0d6567d41be5db72263197323437ff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
