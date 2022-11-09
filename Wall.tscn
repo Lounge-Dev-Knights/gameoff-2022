@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 16 )
+extents = Vector2( 64, 32 )
 
 [node name="Wall" type="StaticBody2D"]
 collision_layer = 8
@@ -11,4 +11,6 @@ collision_mask = 3
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( -64, -16, 64, -16, 64, 16, -64, 16 )
+position = Vector2( -21.5544, 10.4421 )
+scale = Vector2( 0.663212, 0.673684 )
+polygon = PoolVector2Array( -64, -63, 129, -63, 129, 32, -64, 32 )
