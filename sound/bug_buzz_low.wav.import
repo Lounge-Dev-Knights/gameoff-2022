@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bug_buzz_low.wav-e49bc82c98c45581993bf5ef7ad4c487.sample"
+
+[deps]
+
+source_file="res://sound/bug_buzz_low.wav"
+dest_files=[ "res://.import/bug_buzz_low.wav-e49bc82c98c45581993bf5ef7ad4c487.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
