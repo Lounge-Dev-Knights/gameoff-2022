@@ -64,7 +64,7 @@ func _process_state(delta: float) -> void:
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			
-			if to_local(target.global_position).length() < sqrt(32 * 32 + 32 * 32):
+			if to_local(target.global_position).length() <= sqrt(32 * 32 + 32 * 32):
 				state = State.IDLE
 				if target.is_in_group("items"):
 					target.queue_free()
@@ -72,6 +72,15 @@ func _process_state(delta: float) -> void:
 
 
 func check_items() -> void:
-	for body in $ItemDetectionArea.get_overlapping_areas():
+	var bodies = $ItemDetectionArea.get_overlapping_areas()
+	bodies.sort_custom(self, 'compare_items')
+	for body in bodies:
 		target = body
-		pass
+		state = State.WALKING
+
+
+func compare_items(a, b) -> int:
+	var value_a = a.attraction * 500 - to_local(a.global_position).length()
+	var value_b = b.attraction * 500 - to_local(b.global_position).length()
+	
+	return value_b > value_a
