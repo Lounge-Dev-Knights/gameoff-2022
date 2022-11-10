@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Apple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elephant.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Banana.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=7]
 [ext_resource path="res://graphics/floor.png" type="Texture" id=8]
+[ext_resource path="res://Mouse.tscn" type="PackedScene" id=9]
 
 [node name="Testlevel" type="Node2D"]
 script = ExtResource( 5 )
@@ -245,7 +246,7 @@ margin_right = 286.0
 grow_horizontal = 2
 grow_vertical = 0
 rect_min_size = Vector2( 280, 0 )
-items = [ "Apple", ExtResource( 4 ), false, "Banana", ExtResource( 7 ), false, "Item 2", null, false, "Item 3", null, false ]
+items = [ "Apple", ExtResource( 4 ), false, "Banana", ExtResource( 7 ), false, "Mouse", ExtResource( 4 ), false, "Item 3", null, false ]
 auto_height = true
 max_columns = 4
 same_column_width = true
@@ -260,5 +261,8 @@ position = Vector2( 920, 464 )
 
 [node name="Elephant" parent="." instance=ExtResource( 2 )]
 position = Vector2( 840, 240 )
+
+[node name="Mouse" parent="." instance=ExtResource( 9 )]
+position = Vector2( 312, 376 )
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]

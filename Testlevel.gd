@@ -20,9 +20,5 @@ func handle_drop_item() -> void:
 		$items.add_child(item)
 
 func _on_ItemList_item_selected(index: int) -> void:
-	match $CanvasLayer/ItemList.get_item_text(index):
-		'Apple':
-			active_item = preload("res://Apple.tscn")
-		'Banana':
-			active_item = preload("res://Banana.tscn")
+	active_item = load("res://%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))
 	
