@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Al'phant-walking.ogg-81f0aa9e2dd3a9f638792911c1232915.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Al'phant-walking.ogg"
+dest_files=[ "res://.import/Al'phant-walking.ogg-81f0aa9e2dd3a9f638792911c1232915.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

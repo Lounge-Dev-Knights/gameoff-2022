@@ -11,8 +11,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 463.0
-margin_top = 293.0
-margin_right = 560.0
-margin_bottom = 307.0
+margin_left = 911.0
+margin_top = 533.0
+margin_right = 1008.0
+margin_bottom = 547.0
 text = "Game Off 2022"

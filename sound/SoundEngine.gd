@@ -15,49 +15,9 @@ const sounds = {
 		"stream": preload("res://sound/bug_buzz_bass.wav"),
 		"volume": -40
 		},
-	"Cocktail_drop": {
-		"stream": preload("res://sound/Drop.ogg"),
-		"volume": -20
-		},
-	"Cocktail_move": {
-		"stream": preload("res://sound/Glass_move.ogg"),
-		"volume": -20
-		},
-	"Cocktail_done": {
-		"stream": preload("res://sound/Shake.ogg"),
-		"volume": -20
-		},
-	"Bug1": {
-		"stream": preload("res://sound/bug_buzz.wav"),
-		"volume": -20
-		},
-	"Bug2": {
-		"stream": preload("res://sound/bug_buzz_bass.wav"),
-		"volume": -20
-		},
-	"Bug3": {
-		"stream": preload("res://sound/bug_buzz_high.wav"),
-		"volume": -20
-		},
-	"Bug4": {
-		"stream": preload("res://sound/bug_buzz_low.wav"),
-		"volume": -20
-		},
-	"PERFECT": {
-		"stream": preload("res://sound/EXCLAMATION_Smurf_Yay_mono.wav"),
-		"volume": -20
-		},
-	"GREAT": {
-		"stream": preload("res://sound/bug_buzz_bass.wav"),
-		"volume": -20
-		},
-	"NICE": {
-		"stream": preload("res://sound/bug_buzz_high.wav"),
-		"volume": -20
-		},
-	"OK": {
-		"stream": preload("res://sound/ORCH_Grunt_Short_01_mono.wav"),
-		"volume": -20
+	"El_Walk": {
+		"stream": preload("res://sound/music/Al'phant-walking.ogg"),
+		"volume": -25
 		},
 }
 

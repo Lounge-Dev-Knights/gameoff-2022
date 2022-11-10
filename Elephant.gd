@@ -20,8 +20,8 @@ var velocity: Vector2
 func _ready() -> void:
 	randomize()
 	$FreeTarget.set_as_toplevel(true)
-	pass # Replace with function body.
-
+	MusicEngine.play_song("Music1")
+	MusicEngine.secondary_player.volume_db = -80
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,7 +36,10 @@ func _physics_process(delta: float) -> void:
 func _draw() -> void:
 	if target:
 		draw_circle(to_local(target.global_position), 5, Color.red)
-	
+
+
+# Fade duration for secondary music track
+const FADE_DURATION = 0.3
 
 func _process_state(delta: float) -> void:
 	$Label.text = State.keys()[state]
@@ -44,6 +47,9 @@ func _process_state(delta: float) -> void:
 	match state:
 		State.IDLE:
 			$LN_4elephant/AnimationPlayer.play("rest")
+			
+			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), 0, delta / FADE_DURATION))
+			
 			velocity *= (0.9 * delta)
 			check_items()
 			if randf() < 0.3 * delta:
@@ -61,6 +67,7 @@ func _process_state(delta: float) -> void:
 				# target = Vector2(rand_range(0, 640), rand_range(0, 300))
 		State.WALKING:
 			$LN_4elephant/AnimationPlayer.play("walk")
+			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(-25), delta / FADE_DURATION))
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			
@@ -69,6 +76,8 @@ func _process_state(delta: float) -> void:
 				if target.is_in_group("items"):
 					target.queue_free()
 				target = null
+	
+	print("%f" % MusicEngine.secondary_player.volume_db)
 
 
 func check_items() -> void:
