@@ -1,15 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Apple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elephant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Wall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://graphics/GRASSPOT.png" type="Texture" id=4]
 [ext_resource path="res://Testlevel.gd" type="Script" id=5]
 [ext_resource path="res://Banana.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=7]
 [ext_resource path="res://graphics/floor.png" type="Texture" id=8]
+[ext_resource path="res://graphics/mouse.png" type="Texture" id=9]
 [ext_resource path="res://Staircase.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mousehole.tscn" type="PackedScene" id=11]
+[ext_resource path="res://graphics/apple.png" type="Texture" id=12]
 
 [node name="Testlevel" type="Node2D"]
 script = ExtResource( 5 )
@@ -247,7 +249,7 @@ margin_right = 286.0
 grow_horizontal = 2
 grow_vertical = 0
 rect_min_size = Vector2( 280, 0 )
-items = [ "Apple", ExtResource( 4 ), false, "Banana", ExtResource( 7 ), false, "Mouse", ExtResource( 4 ), false, "Item 3", null, false ]
+items = [ "Apple", ExtResource( 12 ), false, "Banana", ExtResource( 7 ), false, "Mouse", ExtResource( 9 ), false, "Grasspot", ExtResource( 4 ), false ]
 auto_height = true
 max_columns = 4
 same_column_width = true
@@ -267,17 +269,17 @@ position = Vector2( 840, 240 )
 position = Vector2( 205, 139 )
 
 [node name="Mousehole" parent="." instance=ExtResource( 11 )]
-position = Vector2( 67, 362 )
+position = Vector2( 260, 1033 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1534, 916 )
+position = Vector2( 1557, 883 )
 mouses = 1
 
 [node name="Mousehole3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1831, 186 )
+position = Vector2( 1680, 49 )
 
 [node name="Mousehole4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 854, 593 )
+position = Vector2( 862, 563 )
 mouses = 1
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]

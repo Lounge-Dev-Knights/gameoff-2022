@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Mousehole.gd" type="Script" id=1]
+[ext_resource path="res://Mousehole.png" type="Texture" id=2]
 
 [node name="Mousehole" type="Node2D" groups=["mouseholes"]]
+scale = Vector2( 0.02, 0.02 )
 script = ExtResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -32, 0, 0, -32, 32, 0, 0, 32 )
 
 [node name="Spawntrigger" type="Timer" parent="."]
 autostart = true
+
+[node name="Mousehole" type="Sprite" parent="."]
+texture = ExtResource( 2 )
 
 [connection signal="timeout" from="Spawntrigger" to="." method="_on_Spawntrigger_timeout"]
