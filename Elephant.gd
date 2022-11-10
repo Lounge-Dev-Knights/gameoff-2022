@@ -42,6 +42,9 @@ func _draw() -> void:
 const FADE_DURATION = 0.3
 
 func _process_state(delta: float) -> void:
+	
+	_process_music(delta)
+	
 	$Label.text = State.keys()[state]
 	if velocity.x != 0.0:
 		$LN_4elephant.scale.x = abs($LN_4elephant.scale.x) * sign(velocity.x)
@@ -50,8 +53,6 @@ func _process_state(delta: float) -> void:
 		State.IDLE:
 			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
 			$LN_4elephant/AnimationPlayer.play("rest")
-			
-			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), 0, delta / FADE_DURATION))
 			
 			velocity *= (0.9 * delta)
 			check_items()
@@ -71,7 +72,8 @@ func _process_state(delta: float) -> void:
 		State.WALKING:
 			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
 			$LN_4elephant/AnimationPlayer.play("walk")
-			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(-25), delta / FADE_DURATION))
+			
+			
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			
@@ -84,6 +86,7 @@ func _process_state(delta: float) -> void:
 			$LN_4elephant/AnimationPlayer.play("walk")
 			$LN_4elephant/AnimationPlayer.playback_speed = 2.0
 			
+			
 			# dont change velocity if target disappeared
 			if is_instance_valid(target):
 				velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
@@ -91,6 +94,20 @@ func _process_state(delta: float) -> void:
 			if randf() < 0.5 * delta:
 				state = State.IDLE
 			
+
+
+func _process_music(delta: float) -> void:
+	
+	# currently the same pitch for both states
+	var pitch =  1.0 if state == State.FLEEING else 1.0
+	
+	MusicEngine.secondary_player.pitch_scale = lerp(MusicEngine.secondary_player.pitch_scale, pitch, delta / 0.2)
+	for player in MusicEngine.players:
+		player.pitch_scale = lerp(player.pitch_scale, pitch, delta / 0.2)
+	
+	var secondary_volume = linear2db(0) if state == State.IDLE else -25 
+	MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(secondary_volume), delta / FADE_DURATION))
+	
 
 func check_items() -> void:
 	var bodies = $ItemDetectionArea.get_overlapping_areas()
