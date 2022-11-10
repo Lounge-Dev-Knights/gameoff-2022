@@ -10,8 +10,8 @@ var direction := Vector2.RIGHT
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _process(delta: float) -> void:
+	$Mouse.flip_h = velocity.x < 0
 
 
 func _physics_process(delta: float) -> void:
