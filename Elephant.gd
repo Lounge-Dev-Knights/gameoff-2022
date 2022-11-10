@@ -43,9 +43,12 @@ const FADE_DURATION = 0.3
 
 func _process_state(delta: float) -> void:
 	$Label.text = State.keys()[state]
+	if velocity.x != 0.0:
+		$LN_4elephant.scale.x = abs($LN_4elephant.scale.x) * sign(velocity.x)
 	
 	match state:
 		State.IDLE:
+			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
 			$LN_4elephant/AnimationPlayer.play("rest")
 			
 			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), 0, delta / FADE_DURATION))
@@ -66,28 +69,43 @@ func _process_state(delta: float) -> void:
 				
 				# target = Vector2(rand_range(0, 640), rand_range(0, 300))
 		State.WALKING:
+			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
 			$LN_4elephant/AnimationPlayer.play("walk")
 			MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(-25), delta / FADE_DURATION))
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			
-			if to_local(target.global_position).length() <= sqrt(32 * 32 + 32 * 32):
+			if to_local(target.global_position).length() <= sqrt(64 * 64 + 64 * 64):
 				state = State.IDLE
 				if target.is_in_group("items"):
 					target.queue_free()
 				target = null
-
+		State.FLEEING:
+			$LN_4elephant/AnimationPlayer.play("walk")
+			$LN_4elephant/AnimationPlayer.playback_speed = 2.0
+			velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
+			
+			if randf() < 0.5 * delta:
+				state = State.IDLE
+			
 
 func check_items() -> void:
 	var bodies = $ItemDetectionArea.get_overlapping_areas()
 	bodies.sort_custom(self, 'compare_items')
 	for body in bodies:
+		# skip items which are beneath walls
+		$RayCast2D.cast_to = to_local(body.global_position)
+		$RayCast2D.force_raycast_update()
+		if $RayCast2D.get_collider():
+			continue
+			
 		target = body
-		state = State.WALKING
+		state = State.WALKING if body.attraction >= 0 else State.FLEEING
+		
 
 
 func compare_items(a, b) -> int:
-	var value_a = a.attraction * 500 - to_local(a.global_position).length()
-	var value_b = b.attraction * 500 - to_local(b.global_position).length()
+	var value_a = abs(a.attraction) * 500 - to_local(a.global_position).length()
+	var value_b = abs(b.attraction) * 500 - to_local(b.global_position).length()
 	
 	return value_b > value_a

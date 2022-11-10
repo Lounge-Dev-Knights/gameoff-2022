@@ -4,18 +4,18 @@
 [ext_resource path="res://Enemies/elephant_4Legs.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 64, 64 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 256.0
+radius = 512.0
 
 [node name="Elephant" type="KinematicBody2D"]
 collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="LN_4elephant" parent="." instance=ExtResource( 3 )]
-position = Vector2( -4, 35 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( -6, 66 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
