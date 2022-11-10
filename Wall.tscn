@@ -11,6 +11,7 @@ collision_mask = 3
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( -21.5544, 10.4421 )
-scale = Vector2( 0.663212, 0.673684 )
-polygon = PoolVector2Array( -64, -63, 129, -63, 129, 32, -64, 32 )
+position = Vector2( -25.0182, 6.92477 )
+scale = Vector2( 0.60909, 0.783601 )
+color = Color( 0.246094, 0.0764816, 0.0764816, 1 )
+polygon = PoolVector2Array( -64, -49.6742, 146.15, -49.6742, 146.15, 32, -64, 32 )
