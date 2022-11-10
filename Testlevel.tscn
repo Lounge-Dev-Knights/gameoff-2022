@@ -8,8 +8,8 @@
 [ext_resource path="res://Banana.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=7]
 [ext_resource path="res://graphics/floor.png" type="Texture" id=8]
-[ext_resource path="res://Mouse.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Staircase.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mousehole.tscn" type="PackedScene" id=11]
 
 [node name="Testlevel" type="Node2D"]
 script = ExtResource( 5 )
@@ -263,10 +263,21 @@ position = Vector2( 920, 464 )
 [node name="Elephant" parent="." instance=ExtResource( 2 )]
 position = Vector2( 840, 240 )
 
-[node name="Mouse" parent="." instance=ExtResource( 9 )]
-position = Vector2( 312, 376 )
-
 [node name="Staircase" parent="." instance=ExtResource( 10 )]
 position = Vector2( 205, 139 )
+
+[node name="Mousehole" parent="." instance=ExtResource( 11 )]
+position = Vector2( 67, 362 )
+
+[node name="Mousehole2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1534, 916 )
+mouses = 1
+
+[node name="Mousehole3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1831, 186 )
+
+[node name="Mousehole4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 854, 593 )
+mouses = 1
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]

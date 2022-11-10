@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _draw() -> void:
-	if target:
+	if is_instance_valid(target):
 		draw_circle(to_local(target.global_position), 5, Color.red)
 
 
@@ -83,7 +83,10 @@ func _process_state(delta: float) -> void:
 		State.FLEEING:
 			$LN_4elephant/AnimationPlayer.play("walk")
 			$LN_4elephant/AnimationPlayer.playback_speed = 2.0
-			velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
+			
+			# dont change velocity if target disappeared
+			if is_instance_valid(target):
+				velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
 			
 			if randf() < 0.5 * delta:
 				state = State.IDLE
