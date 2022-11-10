@@ -76,8 +76,6 @@ func _process_state(delta: float) -> void:
 				if target.is_in_group("items"):
 					target.queue_free()
 				target = null
-	
-	print("%f" % MusicEngine.secondary_player.volume_db)
 
 
 func check_items() -> void:
