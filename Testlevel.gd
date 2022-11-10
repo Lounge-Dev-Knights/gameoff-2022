@@ -23,4 +23,6 @@ func _on_ItemList_item_selected(index: int) -> void:
 	match $CanvasLayer/ItemList.get_item_text(index):
 		'Apple':
 			active_item = preload("res://Apple.tscn")
+		'Banana':
+			active_item = preload("res://Banana.tscn")
 	
