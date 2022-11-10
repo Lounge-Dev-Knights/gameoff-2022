@@ -6,14 +6,24 @@ var active_item: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for staircase in get_tree().get_nodes_in_group("staircases"):
+		(staircase as Area2D).connect("body_entered", self, "_staircase_body_entered")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		handle_drop_item()
-		
-		
+
+
+func _staircase_body_entered(body: Node) -> void:
+	finish_level()
+
+
+func finish_level() -> void:
+	get_tree().change_scene("res://Titlescreen.tscn")
+
+
 func handle_drop_item() -> void:
+	
 	if active_item != null:
 		var item = active_item.instance()
 		item.position = get_local_mouse_position()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Apple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elephant.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=7]
 [ext_resource path="res://graphics/floor.png" type="Texture" id=8]
 [ext_resource path="res://Mouse.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Staircase.tscn" type="PackedScene" id=10]
 
 [node name="Testlevel" type="Node2D"]
 script = ExtResource( 5 )
@@ -264,5 +265,8 @@ position = Vector2( 840, 240 )
 
 [node name="Mouse" parent="." instance=ExtResource( 9 )]
 position = Vector2( 312, 376 )
+
+[node name="Staircase" parent="." instance=ExtResource( 10 )]
+position = Vector2( 205, 139 )
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]

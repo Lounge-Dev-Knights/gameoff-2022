@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 64 )
+
+[node name="Staircase" type="Area2D" groups=["staircases"]]
+collision_layer = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.309804, 0.309804, 0.309804, 1 )
+polygon = PoolVector2Array( -128, -64, 128, -64, 128, 64, -128, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
