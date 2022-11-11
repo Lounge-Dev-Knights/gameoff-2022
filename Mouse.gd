@@ -14,6 +14,7 @@ var direction := Vector2.RIGHT
 func _ready() -> void:
 	var mouseholes = get_tree().get_nodes_in_group("mouseholes")
 	mouseholes.shuffle()
+	SoundEngine.play_sound("Mouse")
 	
 	for mousehole in mouseholes:
 		if to_local(mousehole.global_position).length() > 1:

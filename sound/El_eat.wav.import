@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bug_buzz_bass.wav-ffcbb2040b89f6e7140f3d7f71c945e4.sample"
+path="res://.import/El_eat.wav-8570fba0adf0dc8be49f5edb6daaf1c1.sample"
 
 [deps]
 
-source_file="res://sound/bug_buzz_bass.wav"
-dest_files=[ "res://.import/bug_buzz_bass.wav-ffcbb2040b89f6e7140f3d7f71c945e4.sample" ]
+source_file="res://sound/El_eat.wav"
+dest_files=[ "res://.import/El_eat.wav-8570fba0adf0dc8be49f5edb6daaf1c1.sample" ]
 
 [params]
 

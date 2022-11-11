@@ -84,6 +84,7 @@ func _process_state(delta: float) -> void:
 						target.eat()
 					else:
 						target.queue_free()
+				SoundEngine.play_sound("El_Eat")
 				target = null
 		State.FLEEING:
 			$LN_4elephant/AnimationPlayer.play("walk")

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bug_buzz_low.wav-e49bc82c98c45581993bf5ef7ad4c487.sample"
+path="res://.import/Shatter.wav-5acdfaaced5a59f1919b8fa1357deff7.sample"
 
 [deps]
 
-source_file="res://sound/bug_buzz_low.wav"
-dest_files=[ "res://.import/bug_buzz_low.wav-e49bc82c98c45581993bf5ef7ad4c487.sample" ]
+source_file="res://sound/Shatter.wav"
+dest_files=[ "res://.import/Shatter.wav-5acdfaaced5a59f1919b8fa1357deff7.sample" ]
 
 [params]
 
