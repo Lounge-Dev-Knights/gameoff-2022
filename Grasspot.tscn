@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fruit.gd" type="Script" id=1]
+[ext_resource path="res://Grasspot.gd" type="Script" id=1]
 [ext_resource path="res://graphics/GRASSPOT.png" type="Texture" id=2]
+[ext_resource path="res://graphics/GRASSPOT-GONE.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
@@ -10,15 +11,20 @@ radius = 32.0
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
-attraction = 1
 
 [node name="Area2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Icon" type="Sprite" parent="."]
+[node name="Grasspot" type="Sprite" parent="."]
 position = Vector2( -1, -9 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+
+[node name="GrasspotGone" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1, 9 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_top = -27.0

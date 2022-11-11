@@ -80,7 +80,10 @@ func _process_state(delta: float) -> void:
 			if to_local(target.global_position).length() <= sqrt(64 * 64 + 64 * 64):
 				state = State.IDLE
 				if target.is_in_group("items"):
-					target.queue_free()
+					if target.has_method("eat"):
+						target.eat()
+					else:
+						target.queue_free()
 				target = null
 		State.FLEEING:
 			$LN_4elephant/AnimationPlayer.play("walk")
@@ -93,7 +96,6 @@ func _process_state(delta: float) -> void:
 			
 			if randf() < 0.5 * delta:
 				state = State.IDLE
-			
 
 
 func _process_music(delta: float) -> void:
@@ -113,6 +115,9 @@ func check_items() -> void:
 	var bodies = $ItemDetectionArea.get_overlapping_areas()
 	bodies.sort_custom(self, 'compare_items')
 	for body in bodies:
+		if body.attraction == 0:
+			continue
+			
 		# skip items which are beneath walls
 		$RayCast2D.cast_to = to_local(body.global_position)
 		$RayCast2D.force_raycast_update()
