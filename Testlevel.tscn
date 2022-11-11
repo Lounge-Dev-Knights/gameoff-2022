@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Apple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elephant.tscn" type="PackedScene" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://Staircase.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mousehole.tscn" type="PackedScene" id=11]
 [ext_resource path="res://graphics/apple.png" type="Texture" id=12]
+[ext_resource path="res://CupboardHorizontal.tscn" type="PackedScene" id=13]
 
-[node name="Testlevel" type="Node2D"]
+[node name="Testlevel" type="YSort"]
 script = ExtResource( 5 )
 
 [node name="Floor" type="Sprite" parent="."]
@@ -157,16 +158,16 @@ position = Vector2( 1856, 32 )
 rotation = -1.57079
 
 [node name="Wall31" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 608, 256 )
+position = Vector2( 603, 343 )
 
 [node name="Wall32" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 608, 128 )
+position = Vector2( 603, 234 )
 
 [node name="Wall33" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 608, 384 )
+position = Vector2( 604, 453 )
 
 [node name="Wall35" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 608, 512 )
+position = Vector2( 604, 561 )
 
 [node name="Wall46" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 256 )
@@ -216,34 +217,6 @@ position = Vector2( 32, 896 )
 [node name="Wall61" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 1024 )
 
-[node name="Wall36" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 704, 544 )
-rotation = -1.57079
-
-[node name="Wall37" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 832, 544 )
-rotation = -1.57079
-
-[node name="Wall38" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 960, 544 )
-rotation = -1.57079
-
-[node name="Wall39" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 1088, 544 )
-rotation = -1.57079
-
-[node name="Wall40" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 1216, 544 )
-rotation = -1.57079
-
-[node name="Wall41" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 1344, 544 )
-rotation = -1.57079
-
-[node name="Wall42" parent="walls" instance=ExtResource( 3 )]
-position = Vector2( 1472, 544 )
-rotation = -1.57079
-
 [node name="Wall43" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1536, 864 )
 rotation = -1.57079
@@ -255,6 +228,30 @@ rotation = -1.57079
 [node name="Wall45" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1792, 864 )
 rotation = -1.57079
+
+[node name="CupboardHorizontal" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 696, 576 )
+
+[node name="CupboardHorizontal2" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 824, 575 )
+
+[node name="CupboardHorizontal3" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 952, 573 )
+
+[node name="CupboardHorizontal4" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 1080, 572 )
+
+[node name="CupboardHorizontal5" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 1210, 572 )
+
+[node name="CupboardHorizontal6" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 1338, 571 )
+
+[node name="CupboardHorizontal7" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 1466, 569 )
+
+[node name="CupboardHorizontal8" parent="walls" instance=ExtResource( 13 )]
+position = Vector2( 1594, 568 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
