@@ -81,7 +81,7 @@ func _process_state(delta: float) -> void:
 			check_items()
 			velocity = velocity.move_toward(to_local(target.global_position).clamped(MAX_SPEED), delta * 100)
 			
-			if to_local(target.global_position).length() <= sqrt(64 * 64 + 64 * 64):
+			if to_local(target.global_position).length() <= sqrt(96 * 96 + 96 * 96):
 				state = State.IDLE
 				if target.is_in_group("items"):
 					if target.has_method("eat"):

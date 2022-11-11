@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		$Cupboard.offset = Vector2(
 			shaking_noise.get_noise_2d(offset, 0),
 			shaking_noise.get_noise_2d(0, offset)
-		) * 20
+		) * 40
 
 
 func hit() -> void:
