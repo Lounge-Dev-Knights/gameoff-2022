@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Apple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elephant.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cupboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://graphics/GRASSPOT.png" type="Texture" id=4]
 [ext_resource path="res://Testlevel.gd" type="Script" id=5]
 [ext_resource path="res://Banana.tscn" type="PackedScene" id=6]
@@ -34,207 +34,247 @@ position = Vector2( 1112, 408 )
 [node name="Apple4" parent="items" instance=ExtResource( 1 )]
 position = Vector2( 952, 176 )
 
-[node name="walls" type="Node2D" parent="."]
+[node name="walls" type="YSort" parent="."]
 
 [node name="Wall" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 64, 1056 )
+rotation = -1.57079
 
 [node name="Wall2" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 192, 1056 )
+rotation = -1.57079
 
 [node name="Wall3" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 320, 1056 )
+rotation = -1.57079
 
 [node name="Wall4" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 448, 1056 )
+rotation = -1.57079
 
 [node name="Wall5" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 576, 1056 )
+rotation = -1.57079
 
 [node name="Wall6" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 704, 1056 )
+rotation = -1.57079
 
 [node name="Wall7" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 832, 1056 )
+rotation = -1.57079
 
 [node name="Wall8" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 960, 1056 )
+rotation = -1.57079
 
 [node name="Wall9" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1088, 1056 )
+rotation = -1.57079
 
 [node name="Wall10" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1216, 1056 )
+rotation = -1.57079
 
 [node name="Wall11" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1344, 1056 )
+rotation = -1.57079
 
 [node name="Wall12" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1472, 1056 )
+rotation = -1.57079
 
 [node name="Wall13" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1600, 1056 )
+rotation = -1.57079
 
 [node name="Wall14" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1728, 1056 )
+rotation = -1.57079
 
 [node name="Wall15" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1856, 1056 )
+rotation = -1.57079
 
 [node name="Wall16" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 64, 32 )
+rotation = -1.57079
 
 [node name="Wall17" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 192, 32 )
+rotation = -1.57079
 
 [node name="Wall18" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 320, 32 )
+rotation = -1.57079
 
 [node name="Wall19" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 448, 32 )
+rotation = -1.57079
 
 [node name="Wall20" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 576, 32 )
+rotation = -1.57079
 
 [node name="Wall21" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 704, 32 )
+rotation = -1.57079
 
 [node name="Wall22" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 832, 32 )
+rotation = -1.57079
 
 [node name="Wall23" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 960, 32 )
+rotation = -1.57079
 
 [node name="Wall24" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1088, 32 )
+rotation = -1.57079
 
 [node name="Wall25" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1216, 32 )
+rotation = -1.57079
 
 [node name="Wall26" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1344, 32 )
+rotation = -1.57079
 
 [node name="Wall27" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1472, 32 )
+rotation = -1.57079
 
 [node name="Wall28" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1600, 32 )
+rotation = -1.57079
 
 [node name="Wall29" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1728, 32 )
+rotation = -1.57079
 
 [node name="Wall30" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1856, 32 )
+rotation = -1.57079
 
 [node name="Wall31" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 256 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall32" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 128 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall33" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 384 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall35" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 512 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall46" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 256 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall47" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 128 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall48" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 384 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall49" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 512 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall50" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 768 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall51" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 640 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall52" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 896 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall53" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 1024 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall54" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 256 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall55" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 128 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall56" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 384 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall57" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 512 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall58" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 768 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall59" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 640 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall60" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 896 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall61" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 1024 )
-rotation = 1.5708
+scale = Vector2( 1, 1 )
 
 [node name="Wall36" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 704, 544 )
+rotation = -1.57079
 
 [node name="Wall37" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 832, 544 )
+rotation = -1.57079
 
 [node name="Wall38" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 960, 544 )
+rotation = -1.57079
 
 [node name="Wall39" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1088, 544 )
+rotation = -1.57079
 
 [node name="Wall40" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1216, 544 )
+rotation = -1.57079
 
 [node name="Wall41" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1344, 544 )
+rotation = -1.57079
 
 [node name="Wall42" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1472, 544 )
+rotation = -1.57079
 
 [node name="Wall43" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1536, 864 )
+rotation = -1.57079
 
 [node name="Wall44" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1664, 864 )
+rotation = -1.57079
 
 [node name="Wall45" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1792, 864 )
+rotation = -1.57079
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

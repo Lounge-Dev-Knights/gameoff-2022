@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 
 [node name="LN_4elephant" parent="." instance=ExtResource( 3 )]
 position = Vector2( -6, 66 )
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
