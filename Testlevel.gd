@@ -12,7 +12,9 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		handle_drop_item()
+		var space_state = get_world_2d().direct_space_state
+		if space_state.intersect_point(get_global_mouse_position()).size() == 0:
+			handle_drop_item()
 
 
 func _staircase_body_entered(body: Node) -> void:
@@ -32,4 +34,5 @@ func handle_drop_item() -> void:
 
 func _on_ItemList_item_selected(index: int) -> void:
 	active_item = load("res://%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))
+	
 	
