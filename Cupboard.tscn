@@ -68,8 +68,8 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Cupboard" type="Sprite" parent="."]
-position = Vector2( 73, -113 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( -1, -87 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Cupboard_input_event"]
