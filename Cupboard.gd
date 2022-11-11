@@ -21,9 +21,11 @@ func _process(delta: float) -> void:
 		var offset = OS.get_ticks_msec() * 0.2
 		
 		$Cupboard.offset = Vector2(
-			shaking_noise.get_noise_2d(offset, 0),
-			shaking_noise.get_noise_2d(0, offset)
-		) * 40
+			shaking_noise.get_noise_1d(offset),
+			shaking_noise.get_noise_1d(-offset)
+		) * 64
+		
+		$Cupboard.rotation_degrees = 10.0 * shaking_noise.get_noise_1d(offset)
 
 
 func hit() -> void:

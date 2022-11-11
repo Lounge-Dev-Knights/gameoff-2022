@@ -259,7 +259,7 @@ position = Vector2( 920, 464 )
 position = Vector2( 832, 320 )
 
 [node name="Staircase" parent="." instance=ExtResource( 10 )]
-position = Vector2( 205, 139 )
+position = Vector2( 224, 192 )
 
 [node name="Mousehole" parent="." instance=ExtResource( 11 )]
 position = Vector2( 260, 1033 )
