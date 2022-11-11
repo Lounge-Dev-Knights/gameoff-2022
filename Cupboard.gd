@@ -43,3 +43,4 @@ func _on_Timer_timeout() -> void:
 	state = State.BROKEN
 	modulate = Color.darkgray
 	$CPUParticles2D.emitting = true
+	SoundEngine.play_sound("Shatter")
