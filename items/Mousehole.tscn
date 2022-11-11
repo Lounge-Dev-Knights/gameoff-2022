@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Mousehole.gd" type="Script" id=1]
-[ext_resource path="res://Mousehole.png" type="Texture" id=2]
+[ext_resource path="res://items/Mousehole.gd" type="Script" id=1]
+[ext_resource path="res://items/Mousehole.png" type="Texture" id=2]
 
 [node name="Mousehole" type="Node2D" groups=["mouseholes"]]
 scale = Vector2( 0.02, 0.02 )

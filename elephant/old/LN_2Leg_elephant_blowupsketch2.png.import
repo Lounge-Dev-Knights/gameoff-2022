@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LN_4elephant_sketch.png-4088870df69232aee1f97c5c0b745f11.stex"
+path="res://.import/LN_2Leg_elephant_blowupsketch2.png-9bac4351904a02ac37b344d394ab5923.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/LN_4elephant_sketch.png"
-dest_files=[ "res://.import/LN_4elephant_sketch.png-4088870df69232aee1f97c5c0b745f11.stex" ]
+source_file="res://elephant/old/LN_2Leg_elephant_blowupsketch2.png"
+dest_files=[ "res://.import/LN_2Leg_elephant_blowupsketch2.png-9bac4351904a02ac37b344d394ab5923.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouse.png-696f4cca1b0bcc26fbe121cf2289b53b.stex"
+path="res://.import/Untitled 6.png-0e9cb3b6f590aec2c63dd1f37be6aed3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mouse.png"
-dest_files=[ "res://.import/mouse.png-696f4cca1b0bcc26fbe121cf2289b53b.stex" ]
+source_file="res://items/Untitled 6.png"
+dest_files=[ "res://.import/Untitled 6.png-0e9cb3b6f590aec2c63dd1f37be6aed3.stex" ]
 
 [params]
 

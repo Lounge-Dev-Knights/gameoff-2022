@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Untitled 6.png-a998894b491197ca07701b95cbc29e62.stex"
+path="res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.webp-65effa96c1260deebfabb9ee41797d15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Untitled 6.png"
-dest_files=[ "res://.import/Untitled 6.png-a998894b491197ca07701b95cbc29e62.stex" ]
+source_file="res://elephant/old/drawing-elephant-separate-parts-animation-600w-2155963473.webp"
+dest_files=[ "res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.webp-65effa96c1260deebfabb9ee41797d15.stex" ]
 
 [params]
 

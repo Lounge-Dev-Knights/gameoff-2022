@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemies/old/drawing-elephant-separate-parts-animation-600w-2155963473.png" type="Texture" id=2]
+[ext_resource path="res://elephant/old/drawing-elephant-separate-parts-animation-600w-2155963473.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
