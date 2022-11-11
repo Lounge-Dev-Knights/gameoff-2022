@@ -31,6 +31,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide(velocity)
+	
+	var collision = get_last_slide_collision()
+	if state == State.FLEEING and collision != null and collision.collider.has_method("hit"):
+		collision.collider.hit()
 
 
 func _draw() -> void:
