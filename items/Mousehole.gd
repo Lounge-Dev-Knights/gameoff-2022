@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func spawn_mouse() -> void:
 	mouses -= 1
-	var mouse = preload("res://Mouse.tscn").instance()
+	var mouse = preload("res://items/Mouse.tscn").instance()
 	mouse.set_as_toplevel(true)
 	mouse.global_position = global_position
 	add_child(mouse)

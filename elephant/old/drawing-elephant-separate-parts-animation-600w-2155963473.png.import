@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mousehole.png-68ef85155c8bdc12d8ef5718e5b5baa5.stex"
+path="res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.png-57cbf174080ec869eed3bee9ce939e93.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mousehole.png"
-dest_files=[ "res://.import/Mousehole.png-68ef85155c8bdc12d8ef5718e5b5baa5.stex" ]
+source_file="res://elephant/old/drawing-elephant-separate-parts-animation-600w-2155963473.png"
+dest_files=[ "res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.png-57cbf174080ec869eed3bee9ce939e93.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.png-e96b266678891adbabffd8e9fed31a65.stex"
+path="res://.import/elephant_front_test.png-f39ae85eb10160e4fcf4aefa7f4e1eba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/old/drawing-elephant-separate-parts-animation-600w-2155963473.png"
-dest_files=[ "res://.import/drawing-elephant-separate-parts-animation-600w-2155963473.png-e96b266678891adbabffd8e9fed31a65.stex" ]
+source_file="res://elephant/old/elephant_front_test.png"
+dest_files=[ "res://.import/elephant_front_test.png-f39ae85eb10160e4fcf4aefa7f4e1eba.stex" ]
 
 [params]
 

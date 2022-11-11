@@ -33,6 +33,6 @@ func handle_drop_item() -> void:
 
 
 func _on_ItemList_item_selected(index: int) -> void:
-	active_item = load("res://%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))
+	active_item = load("res://items/%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))
 	
 	

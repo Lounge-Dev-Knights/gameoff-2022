@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Enemies/LN_4elephant_sketch.png" type="Texture" id=1]
+[ext_resource path="res://elephant/LN_4elephant_sketch.png" type="Texture" id=1]
 
 [node name="LN_4elephant" type="Node2D"]
 
