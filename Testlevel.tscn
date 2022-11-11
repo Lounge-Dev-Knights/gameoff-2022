@@ -158,83 +158,63 @@ rotation = -1.57079
 
 [node name="Wall31" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 256 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall32" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 128 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall33" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 384 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall35" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 608, 512 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall46" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 256 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall47" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 128 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall48" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 384 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall49" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 512 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall50" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 768 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall51" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 640 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall52" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 896 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall53" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 1888, 1024 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall54" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 256 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall55" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 128 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall56" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 384 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall57" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 512 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall58" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 768 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall59" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 640 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall60" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 896 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall61" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 32, 1024 )
-scale = Vector2( 1, 1 )
 
 [node name="Wall36" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 704, 544 )

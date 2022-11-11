@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bug_buzz_high.wav-fe699018e512245de3ff3b43e643411b.sample"
+path="res://.import/Mouse.wav-ab07e62935da579fdc7681b6bb5e8f04.sample"
 
 [deps]
 
-source_file="res://sound/bug_buzz_high.wav"
-dest_files=[ "res://.import/bug_buzz_high.wav-fe699018e512245de3ff3b43e643411b.sample" ]
+source_file="res://sound/Mouse.wav"
+dest_files=[ "res://.import/Mouse.wav-ab07e62935da579fdc7681b6bb5e8f04.sample" ]
 
 [params]
 

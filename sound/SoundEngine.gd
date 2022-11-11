@@ -8,17 +8,29 @@ const sounds = {
 	#	"volume": 0
 	#},
 	"MenuButtonSound": {
-		"stream": preload("res://sound/bug_buzz.wav"),
+		"stream": preload("res://sound/MenuButtonSound.wav"),
 		"volume": -20
 		},
 	"MenuButtonHoverSound": {
-		"stream": preload("res://sound/bug_buzz_bass.wav"),
+		"stream": preload("res://sound/MenuButtonHoverSound.wav"),
 		"volume": -40
 		},
 	"El_Walk": {
 		"stream": preload("res://sound/music/Al'phant-walking.ogg"),
 		"volume": -25
 		},
+	"El_Eat": {
+		"stream": preload("res://sound/El_eat.wav"),
+		"volume": -25
+	},
+	"Mouse": {
+		"stream": preload("res://sound/Mouse.wav"),
+		"volume": -25
+	},
+	"Shatter": {
+		"stream": preload("res://sound/Shatter.wav"),
+		"volume": -25
+	},
 }
 
 

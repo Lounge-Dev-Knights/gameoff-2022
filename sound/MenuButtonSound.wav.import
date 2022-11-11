@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bug_buzz.wav-4e4b8642552a95414544812d075addf1.sample"
+path="res://.import/MenuButtonSound.wav-0cb66584bc407d3fe950950bb01ce45b.sample"
 
 [deps]
 
-source_file="res://sound/bug_buzz.wav"
-dest_files=[ "res://.import/bug_buzz.wav-4e4b8642552a95414544812d075addf1.sample" ]
+source_file="res://sound/MenuButtonSound.wav"
+dest_files=[ "res://.import/MenuButtonSound.wav-0cb66584bc407d3fe950950bb01ce45b.sample" ]
 
 [params]
 
