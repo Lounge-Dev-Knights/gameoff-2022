@@ -21,7 +21,7 @@ const sounds = {
 		},
 	"El_Eat": {
 		"stream": preload("res://sound/El_eat.wav"),
-		"volume": -25
+		"volume": -0
 	},
 	"Mouse": {
 		"stream": preload("res://sound/Mouse.wav"),
