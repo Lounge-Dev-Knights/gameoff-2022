@@ -31,6 +31,14 @@ const sounds = {
 		"stream": preload("res://sound/Shatter.wav"),
 		"volume": -25
 	},
+	"Rocking": {
+		"stream": preload("res://sound/Rocking.wav"),
+		"volume": -25
+	},
+	"El_Scream": {
+		"stream": preload("res://sound/El_scream.ogg"),
+		"volume": -25
+	},
 }
 
 

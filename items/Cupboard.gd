@@ -32,6 +32,7 @@ func hit() -> void:
 	if state == State.NORMAL:
 		state = State.SHAKING
 		$Timer.start()
+		SoundEngine.play_sound("Rocking")
 
 
 func _on_Cupboard_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

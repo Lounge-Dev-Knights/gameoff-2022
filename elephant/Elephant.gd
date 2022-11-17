@@ -116,6 +116,7 @@ func _process_music(delta: float) -> void:
 	MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(secondary_volume), delta / FADE_DURATION))
 	
 
+
 func check_items() -> void:
 	var bodies = $ItemDetectionArea.get_overlapping_areas()
 	bodies.sort_custom(self, 'compare_items')
