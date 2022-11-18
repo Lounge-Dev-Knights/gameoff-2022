@@ -116,6 +116,7 @@ func _process_music(delta: float) -> void:
 	MusicEngine.secondary_player.volume_db = linear2db(lerp(db2linear(MusicEngine.secondary_player.volume_db), db2linear(secondary_volume), delta / FADE_DURATION))
 	
 
+
 func check_items() -> void:
 	var bodies = $ItemDetectionArea.get_overlapping_areas()
 	bodies.sort_custom(self, 'compare_items')
@@ -130,8 +131,10 @@ func check_items() -> void:
 			continue
 			
 		target = body
-		state = State.WALKING if body.attraction >= 0 else State.FLEEING
+		state = State.WALKING if body.attraction >= 0 else State.FLEEING 
 		
+		if body.attraction <= 0:
+			SoundEngine.play_sound("El_Scream")
 
 
 func compare_items(a, b) -> int:
