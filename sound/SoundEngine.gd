@@ -36,8 +36,8 @@ const sounds = {
 		"volume": -25
 	},
 	"El_Scream": {
-		"stream": preload("res://sound/El_scream.ogg"),
-		"volume": -25
+		"stream": preload("res://sound/El_scream_2.wav"),
+		"volume": -0
 	},
 }
 

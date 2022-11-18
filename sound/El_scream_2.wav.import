@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/El_scream_2.wav-af6778ba7ed58c56f8ce40b6e8a71cd8.sample"
+
+[deps]
+
+source_file="res://sound/El_scream_2.wav"
+dest_files=[ "res://.import/El_scream_2.wav-af6778ba7ed58c56f8ce40b6e8a71cd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

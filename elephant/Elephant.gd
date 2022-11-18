@@ -131,8 +131,10 @@ func check_items() -> void:
 			continue
 			
 		target = body
-		state = State.WALKING if body.attraction >= 0 else State.FLEEING
+		state = State.WALKING if body.attraction >= 0 else State.FLEEING 
 		
+		if body.attraction <= 0:
+			SoundEngine.play_sound("El_Scream")
 
 
 func compare_items(a, b) -> int:
