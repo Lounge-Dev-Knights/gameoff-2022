@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://graphics/apple.png" type="Texture" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
@@ -10,9 +10,7 @@
 [ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
 [ext_resource path="res://items/Staircase.tscn" type="PackedScene" id=9]
 [ext_resource path="res://items/Mousehole.tscn" type="PackedScene" id=10]
-[ext_resource path="res://items/Banana.tscn" type="PackedScene" id=11]
 [ext_resource path="res://items/CupboardHorizontal.tscn" type="PackedScene" id=12]
-[ext_resource path="res://items/Apple.tscn" type="PackedScene" id=13]
 
 [node name="Testlevel" type="YSort"]
 script = ExtResource( 2 )
@@ -26,28 +24,7 @@ region_rect = Rect2( 0, 0, 9600, 5400 )
 
 [node name="items" type="Node2D" parent="."]
 
-[node name="Apple" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 1384, 168 )
-
-[node name="Apple2" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 1112, 408 )
-
-[node name="Apple4" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 952, 176 )
-
 [node name="walls" type="YSort" parent="."]
-
-[node name="Wall31" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 288 )
-
-[node name="Wall32" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 192 )
-
-[node name="Wall33" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 384 )
-
-[node name="Wall35" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 480 )
 
 [node name="Wall46" parent="walls" instance=ExtResource( 4 )]
 position = Vector2( 32, 192 )
@@ -119,28 +96,34 @@ position = Vector2( 1888, 1056 )
 position = Vector2( 1888, 1152 )
 
 [node name="CupboardHorizontal" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 640, 512 )
+position = Vector2( 128, 576 )
 
 [node name="CupboardHorizontal2" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 768, 512 )
+position = Vector2( 256, 576 )
 
 [node name="CupboardHorizontal3" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 896, 512 )
+position = Vector2( 384, 576 )
 
 [node name="CupboardHorizontal4" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1024, 512 )
+position = Vector2( 512, 576 )
 
 [node name="CupboardHorizontal5" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1152, 512 )
+position = Vector2( 640, 576 )
 
 [node name="CupboardHorizontal6" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1280, 512 )
+position = Vector2( 768, 576 )
 
 [node name="CupboardHorizontal7" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1408, 512 )
+position = Vector2( 896, 576 )
 
 [node name="CupboardHorizontal8" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1536, 512 )
+position = Vector2( 1024, 576 )
+
+[node name="CupboardHorizontal24" parent="walls" instance=ExtResource( 12 )]
+position = Vector2( 1152, 576 )
+
+[node name="CupboardHorizontal39" parent="walls" instance=ExtResource( 12 )]
+position = Vector2( 1280, 576 )
 
 [node name="CupboardHorizontal9" parent="walls" instance=ExtResource( 12 )]
 position = Vector2( 128, 96 )
@@ -249,30 +232,20 @@ same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2( 128, 128 )
 
-[node name="Banana" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1176, 240 )
-
-[node name="Banana2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 920, 464 )
-
 [node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 832, 320 )
+position = Vector2( 320, 896 )
 
 [node name="Staircase" parent="." instance=ExtResource( 9 )]
-position = Vector2( 224, 192 )
-
-[node name="Mousehole" parent="." instance=ExtResource( 10 )]
-position = Vector2( 260, 1033 )
+position = Vector2( 256, 256 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1472, 928 )
-mouses = 1
+position = Vector2( 1824, 1024 )
 
 [node name="Mousehole3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1664, 128 )
+position = Vector2( 1824, 128 )
 
 [node name="Mousehole4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 862, 563 )
+position = Vector2( 1344, 576 )
 mouses = 1
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]

@@ -6,6 +6,7 @@ var active_item: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	for staircase in get_tree().get_nodes_in_group("staircases"):
 		(staircase as Area2D).connect("body_entered", self, "_staircase_body_entered")
 

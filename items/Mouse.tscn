@@ -4,7 +4,7 @@
 [ext_resource path="res://graphics/mouse.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.0
+radius = 64.0
 
 [node name="Mouse" type="Area2D"]
 collision_layer = 4
@@ -23,4 +23,10 @@ texture = ExtResource( 2 )
 [node name="DirectionTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="PickedTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="input_event" from="." to="." method="_on_Mouse_input_event"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_DirectionTimer_timeout"]
+[connection signal="timeout" from="PickedTimer" to="." method="_on_PickedTimer_timeout"]
