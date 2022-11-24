@@ -14,3 +14,4 @@ data_*/
 /build/*
 !/build/.gdignore
 /docs/.obsidian/
+.DS_Store
