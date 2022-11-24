@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 64.0
 
-[node name="Mouse" type="Area2D"]
+[node name="Mouse" type="Area2D" groups=["mouses"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )

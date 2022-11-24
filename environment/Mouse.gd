@@ -28,13 +28,10 @@ func sort_by_distance(a, b) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta: float) -> void:
-	if picked:
-		position += get_local_mouse_position()
-	else:
-		$Mouse.flip_h = velocity.x < 0
-		if to_local(target.global_position).length() < 10:
-			target.mouses += 1
-			queue_free()
+	$Mouse.flip_h = velocity.x < 0
+	if to_local(target.global_position).length() < 10:
+		target.mouses += 1
+		queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -42,9 +39,24 @@ func _physics_process(delta: float) -> void:
 		velocity = to_local(target.global_position).normalized() * MAX_SPEED
 	else:
 		velocity = velocity.linear_interpolate(direction * MAX_SPEED, delta * 20)
-	
-	position += velocity * delta
+	if picked:
+		if get_local_mouse_position().length() > 300:
+			flee()
+		else:
+			position += get_local_mouse_position() * delta * 10
+	else:
+		position += velocity * delta
 
+
+func flee() -> void:
+	picked = false
+	pickable = false
+	
+	var mouseholes = get_tree().get_nodes_in_group("mouseholes")
+	mouseholes.sort_custom(self, "sort_by_distance")
+	
+	if len(mouseholes) > 0:
+		target = mouseholes[0]
 
 func _on_DirectionTimer_timeout() -> void:
 	direction = direction.rotated(rand_range(0, 2 * PI))
@@ -57,11 +69,4 @@ func _on_Mouse_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 
 
 func _on_PickedTimer_timeout() -> void:
-	picked = false
-	pickable = false
-	
-	var mouseholes = get_tree().get_nodes_in_group("mouseholes")
-	mouseholes.sort_custom(self, "sort_by_distance")
-	
-	if len(mouseholes) > 0:
-		target = mouseholes[0]
+	flee()
