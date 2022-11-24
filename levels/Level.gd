@@ -1,6 +1,10 @@
 extends Node2D
 
 
+const ROOM_CHANGE_THRESHOLD = 100
+const CAMERA_SNAP = Vector2(1920, 1080) / 2
+
+
 var active_item: PackedScene
 
 export(int) var bananas := 0
@@ -8,20 +12,22 @@ export(int) var apples := 0
 export(int) var grasspots := 0
 
 
-var current_room_position := position
+var camera_target_position := Vector2()
 
+var camera := Camera2D.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	camera.current = true
+	add_child(camera)
 	update_item_list()
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	for staircase in get_tree().get_nodes_in_group("staircases"):
 		(staircase as Area2D).connect("body_entered", self, "_staircase_body_entered")
-	active_item = load("res://environment/Mouse.tscn")
 
 func _process(delta: float) -> void:
-	update_current_room_position()
-	position = position.linear_interpolate(current_room_position, 0.1)
+	update_current_camera_position()
+	camera.position = camera.position.linear_interpolate(camera_target_position, 0.05)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -30,14 +36,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		if space_state.intersect_point(get_global_mouse_position()).size() == 0:
 			handle_drop_item()
 
-const ROOM_CHANGE_THRESHOLD = 100
-func update_current_room_position() -> void:
-	var nearest_room_position =  -($Elephant.position / get_viewport_rect().size).floor() * get_viewport_rect().size
+
+func update_current_camera_position() -> void:
+	var nearest_camera_position = $Elephant.position.snapped(CAMERA_SNAP)
 	
-	var offsetted_elephant_position = $Elephant.position - get_viewport_rect().size / 2
-	
-	if nearest_room_position.distance_to(offsetted_elephant_position) > current_room_position.distance_to(offsetted_elephant_position) + ROOM_CHANGE_THRESHOLD:
-		current_room_position = nearest_room_position
+	if nearest_camera_position.distance_to($Elephant.position) < camera_target_position.distance_to($Elephant.position) + ROOM_CHANGE_THRESHOLD:
+		camera_target_position = nearest_camera_position
 	
 
 func finish_level() -> void:
@@ -61,7 +65,4 @@ func _staircase_body_entered(body: Node) -> void:
 
 
 func _on_ItemList_item_selected(index: int) -> void:
-	# active_item = load("res://items/%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))
-	pass
-	
-	
+	active_item = load("res://items/%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))	

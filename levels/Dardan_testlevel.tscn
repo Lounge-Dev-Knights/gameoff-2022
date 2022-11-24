@@ -1,33 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://graphics/apple.png" type="Texture" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://graphics/mouse.png" type="Texture" id=3]
 [ext_resource path="res://environment/Obstacle1x2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://graphics/GRASSPOT.png" type="Texture" id=5]
-[ext_resource path="res://graphics/floor.png" type="Texture" id=6]
+[ext_resource path="res://levels/FloorBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=7]
 [ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environment/Obstacle2x2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/Mousehole.tscn" type="PackedScene" id=10]
 [ext_resource path="res://items/Banana.tscn" type="PackedScene" id=11]
 [ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://items/Apple.tscn" type="PackedScene" id=13]
+[ext_resource path="res://environment/Obstacle1x1.tscn" type="PackedScene" id=14]
 
 [node name="Testlevel" type="YSort"]
 script = ExtResource( 2 )
-
-[node name="Floor" type="Sprite" parent="."]
-position = Vector2( -1920, -1024 )
-scale = Vector2( 0.4, 0.379259 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 6 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 9600, 5400 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="items" type="Node2D" parent="."]
 
@@ -234,6 +223,12 @@ position = Vector2( 1600, 1152 )
 [node name="CupboardHorizontal38" parent="walls" instance=ExtResource( 12 )]
 position = Vector2( 1728, 1152 )
 
+[node name="CupboardHorizontal" parent="." instance=ExtResource( 14 )]
+position = Vector2( 64, 384 )
+
+[node name="CupboardHorizontal2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 384, 448 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer"]
@@ -258,7 +253,7 @@ fixed_icon_size = Vector2( 128, 128 )
 position = Vector2( 1176, 240 )
 
 [node name="Banana2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 920, 464 )
+position = Vector2( 704, 448 )
 
 [node name="Elephant" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1216, 384 )
@@ -276,5 +271,7 @@ position = Vector2( 1664, 128 )
 [node name="Mousehole4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 862, 563 )
 mouses = 1
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]
