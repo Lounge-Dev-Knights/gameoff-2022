@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/Wall.gd" type="Script" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+width = 64
+height = 64
+
+[node name="Wall" type="Sprite"]
+texture = SubResource( 2 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )

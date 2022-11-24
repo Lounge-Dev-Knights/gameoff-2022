@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouse.png-25b0b94b9303bd1882daa74d733fced8.stex"
+path="res://.import/Mousehole.png-dd7d7ed49982363fa4bd77a7d0c7996f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/mouse.png"
-dest_files=[ "res://.import/mouse.png-25b0b94b9303bd1882daa74d733fced8.stex" ]
+source_file="res://environment/Mousehole.png"
+dest_files=[ "res://.import/Mousehole.png-dd7d7ed49982363fa4bd77a7d0c7996f.stex" ]
 
 [params]
 
