@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+export(bool) var destructible := true
+
 var shaking_noise = OpenSimplexNoise.new()
 
 enum State {
@@ -8,11 +10,16 @@ enum State {
 	BROKEN
 }
 
+
 var state = State.NORMAL
+
+var origin: Vector2
 
 
 func _ready() -> void:
 	randomize()
+	
+	origin = position
 	shaking_noise.seed = randi()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,12 +27,15 @@ func _process(delta: float) -> void:
 	if state == State.SHAKING:
 		var offset = OS.get_ticks_msec() * 0.2
 		
-		$Cupboard.offset = Vector2(
+		
+		
+		position = origin + Vector2(
 			shaking_noise.get_noise_1d(offset),
 			shaking_noise.get_noise_1d(-offset)
-		) * 64
+		) * 8
+		look_at(position + Vector2.RIGHT.rotated(0.05 * shaking_noise.get_noise_1d(offset)))
 		
-		$Cupboard.rotation_degrees = 10.0 * shaking_noise.get_noise_1d(offset)
+		
 
 
 func hit() -> void:
@@ -38,12 +48,13 @@ func hit() -> void:
 func _on_Cupboard_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		get_tree().set_input_as_handled()
-		state = State.NORMAL
+		state = State.SHAKING
 		$Timer.stop()
 
 
 func _on_Timer_timeout() -> void:
 	state = State.BROKEN
 	modulate = Color.darkgray
-	$CPUParticles2D.emitting = true
+	if $Dustcloud != null:
+		$Dustcloud.emitting = true
 	SoundEngine.play_sound("Shatter")
