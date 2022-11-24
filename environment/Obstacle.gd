@@ -1,6 +1,13 @@
 extends StaticBody2D
 
+enum Value {
+	HIGH,
+	MEDIUM,
+	LOW
+}
+
 export(bool) var destructible := true
+export(Value) var value := Value.MEDIUM
 
 var shaking_noise = OpenSimplexNoise.new()
 
