@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://graphics/apple.png" type="Texture" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
@@ -10,11 +10,10 @@
 [ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/Staircase.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/Mousehole.tscn" type="PackedScene" id=10]
-[ext_resource path="res://items/Banana.tscn" type="PackedScene" id=11]
 [ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://items/Apple.tscn" type="PackedScene" id=13]
 
 [node name="Testlevel" type="YSort"]
+position = Vector2( -1, 0 )
 script = ExtResource( 2 )
 
 [node name="Floor" type="Sprite" parent="."]
@@ -23,211 +22,205 @@ texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 9600, 5400 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="items" type="Node2D" parent="."]
 
-[node name="Apple" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 1384, 168 )
+[node name="objects" type="YSort" parent="."]
 
-[node name="Apple2" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 1112, 408 )
+[node name="Wall46" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 224 )
 
-[node name="Apple4" parent="items" instance=ExtResource( 13 )]
-position = Vector2( 952, 176 )
+[node name="Wall47" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 320 )
 
-[node name="walls" type="YSort" parent="."]
+[node name="Wall48" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 128 )
 
-[node name="Wall31" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 288 )
+[node name="Wall54" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 512 )
 
-[node name="Wall32" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 192 )
+[node name="Wall55" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 416 )
 
-[node name="Wall33" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 384 )
+[node name="Wall56" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 608 )
 
-[node name="Wall35" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 608, 480 )
+[node name="Wall57" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 704 )
 
-[node name="Wall46" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 192 )
+[node name="Wall58" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 896 )
 
-[node name="Wall47" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 288 )
+[node name="Wall59" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 800 )
 
-[node name="Wall48" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 96 )
+[node name="Wall60" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 992 )
 
-[node name="Wall54" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 480 )
+[node name="Wall61" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 1088 )
 
-[node name="Wall55" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 384 )
+[node name="Wall70" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1, 1184 )
 
-[node name="Wall56" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 576 )
+[node name="Wall49" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 128 )
 
-[node name="Wall57" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 672 )
+[node name="Wall50" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 224 )
 
-[node name="Wall58" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 864 )
+[node name="Wall62" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 416 )
 
-[node name="Wall59" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 768 )
+[node name="Wall63" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 320 )
 
-[node name="Wall60" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 960 )
+[node name="Wall64" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 512 )
 
-[node name="Wall61" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 1056 )
+[node name="Wall65" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 608 )
 
-[node name="Wall70" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 32, 1152 )
+[node name="Wall66" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 800 )
 
-[node name="Wall49" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 192 )
+[node name="Wall67" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 704 )
 
-[node name="Wall50" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 288 )
+[node name="Wall68" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 896 )
 
-[node name="Wall62" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 480 )
+[node name="Wall69" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 992 )
 
-[node name="Wall63" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 384 )
+[node name="Wall71" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 1088 )
 
-[node name="Wall64" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 576 )
+[node name="Wall72" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1857, 1184 )
 
-[node name="Wall65" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 672 )
+[node name="CupboardHorizontal" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 65, 576 )
 
-[node name="Wall66" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 864 )
+[node name="CupboardHorizontal2" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 193, 576 )
 
-[node name="Wall67" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 768 )
+[node name="CupboardHorizontal3" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 321, 576 )
 
-[node name="Wall68" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 960 )
+[node name="CupboardHorizontal4" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 449, 576 )
 
-[node name="Wall69" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 1056 )
+[node name="CupboardHorizontal5" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 577, 576 )
 
-[node name="Wall71" parent="walls" instance=ExtResource( 4 )]
-position = Vector2( 1888, 1152 )
+[node name="CupboardHorizontal6" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 705, 576 )
 
-[node name="CupboardHorizontal" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 640, 512 )
+[node name="CupboardHorizontal7" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 833, 576 )
 
-[node name="CupboardHorizontal2" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 768, 512 )
+[node name="CupboardHorizontal8" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 961, 576 )
 
-[node name="CupboardHorizontal3" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 896, 512 )
+[node name="CupboardHorizontal24" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1089, 576 )
 
-[node name="CupboardHorizontal4" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1024, 512 )
+[node name="CupboardHorizontal39" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1217, 576 )
 
-[node name="CupboardHorizontal5" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1152, 512 )
+[node name="CupboardHorizontal9" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1, 128 )
 
-[node name="CupboardHorizontal6" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1280, 512 )
+[node name="CupboardHorizontal10" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 129, 128 )
 
-[node name="CupboardHorizontal7" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1408, 512 )
+[node name="CupboardHorizontal11" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 257, 128 )
 
-[node name="CupboardHorizontal8" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1536, 512 )
+[node name="CupboardHorizontal12" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 385, 128 )
 
-[node name="CupboardHorizontal9" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 128, 96 )
+[node name="CupboardHorizontal13" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 513, 128 )
 
-[node name="CupboardHorizontal10" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 256, 96 )
+[node name="CupboardHorizontal14" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 641, 128 )
 
-[node name="CupboardHorizontal11" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 384, 96 )
+[node name="CupboardHorizontal15" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 769, 128 )
 
-[node name="CupboardHorizontal12" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 512, 96 )
+[node name="CupboardHorizontal16" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 897, 128 )
 
-[node name="CupboardHorizontal13" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 640, 96 )
+[node name="CupboardHorizontal17" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1025, 128 )
 
-[node name="CupboardHorizontal14" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 768, 96 )
+[node name="CupboardHorizontal18" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1153, 128 )
 
-[node name="CupboardHorizontal15" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 896, 96 )
+[node name="CupboardHorizontal19" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1281, 128 )
 
-[node name="CupboardHorizontal16" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1024, 96 )
+[node name="CupboardHorizontal20" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1409, 128 )
 
-[node name="CupboardHorizontal17" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1152, 96 )
+[node name="CupboardHorizontal21" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1537, 128 )
 
-[node name="CupboardHorizontal18" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1280, 96 )
+[node name="CupboardHorizontal22" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1665, 128 )
 
-[node name="CupboardHorizontal19" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1408, 96 )
+[node name="CupboardHorizontal23" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1793, 128 )
 
-[node name="CupboardHorizontal20" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1536, 96 )
-
-[node name="CupboardHorizontal21" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1664, 96 )
-
-[node name="CupboardHorizontal22" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1792, 96 )
-
-[node name="CupboardHorizontal23" parent="walls" instance=ExtResource( 12 )]
-position = Vector2( 1920, 96 )
-
-[node name="CupboardHorizontal25" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal25" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 128, 1152 )
 
-[node name="CupboardHorizontal26" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal26" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 256, 1152 )
 
-[node name="CupboardHorizontal27" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal27" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 384, 1152 )
 
-[node name="CupboardHorizontal28" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal28" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 512, 1152 )
 
-[node name="CupboardHorizontal29" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal29" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 640, 1152 )
 
-[node name="CupboardHorizontal30" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal30" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 768, 1152 )
 
-[node name="CupboardHorizontal31" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal31" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 896, 1152 )
 
-[node name="CupboardHorizontal32" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal32" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1024, 1152 )
 
-[node name="CupboardHorizontal33" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal33" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1152, 1152 )
 
-[node name="CupboardHorizontal34" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal34" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1280, 1152 )
 
-[node name="CupboardHorizontal35" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal35" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1408, 1152 )
 
-[node name="CupboardHorizontal36" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal36" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1536, 1152 )
 
-[node name="CupboardHorizontal37" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal37" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1664, 1152 )
 
-[node name="CupboardHorizontal38" parent="walls" instance=ExtResource( 12 )]
+[node name="CupboardHorizontal38" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1792, 1152 )
+
+[node name="CupboardHorizontal41" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1, 1152 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -249,30 +242,16 @@ same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2( 128, 128 )
 
-[node name="Banana" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1176, 240 )
-
-[node name="Banana2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 920, 464 )
-
 [node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 832, 320 )
+position = Vector2( 321, 832 )
 
 [node name="Staircase" parent="." instance=ExtResource( 9 )]
-position = Vector2( 224, 192 )
-
-[node name="Mousehole" parent="." instance=ExtResource( 10 )]
-position = Vector2( 260, 1033 )
+position = Vector2( 256, 256 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1472, 928 )
-mouses = 1
+position = Vector2( 1829, 1001 )
 
 [node name="Mousehole3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1664, 128 )
-
-[node name="Mousehole4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 862, 563 )
-mouses = 1
+position = Vector2( 1824, 128 )
 
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_ItemList_item_selected"]
