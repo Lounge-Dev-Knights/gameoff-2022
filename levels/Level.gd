@@ -19,8 +19,12 @@ var camera := Camera2D.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera.current = true
+	camera.position = $Elephant.position
 	add_child(camera)
-	update_item_list()
+	
+	if $ItemSelection != null:
+		$ItemSelection.connect("item_selected", self, "_on_ItemSelection_item_selected")
+	
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	for staircase in get_tree().get_nodes_in_group("staircases"):
 		(staircase as Area2D).connect("body_entered", self, "_staircase_body_entered")
@@ -55,14 +59,9 @@ func handle_drop_item() -> void:
 		$items.add_child(item)
 
 
-func update_item_list() -> void:
-	var item_list = $CanvasLayer/ItemList
-	print(str(item_list.items))
-	
-
 func _staircase_body_entered(body: Node) -> void:
 	finish_level()
 
 
-func _on_ItemList_item_selected(index: int) -> void:
-	active_item = load("res://items/%s.tscn" % $CanvasLayer/ItemList.get_item_text(index))	
+func _on_ItemSelection_item_selected(item: PackedScene) -> void:
+	active_item = item

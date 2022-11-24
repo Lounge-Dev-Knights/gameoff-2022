@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="gameoff-2022"
-run/main_scene="res://levels/Testlevel.tscn"
+run/main_scene="res://Titlescreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
