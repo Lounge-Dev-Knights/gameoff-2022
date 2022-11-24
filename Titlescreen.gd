@@ -1,20 +1,20 @@
 extends CenterContainer
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var levels = [
+	preload("res://levels/Testlevel.tscn"),
+	preload("res://levels/Level_1.tscn"),
+	preload("res://levels/Level_2.tscn"),
+	preload("res://levels/Level_3.tscn"),
+	preload("res://levels/Level_4.tscn"),
+]
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for level in levels:
+		var button = Button.new()
+		button.text = (level.resource_path as String).get_file().get_basename()
+		button.connect("pressed", get_tree(), "change_scene_to", [level])
+		$VBoxContainer.add_child(button)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Start_pressed() -> void:
-	get_tree().change_scene("res://Testlevel.tscn")
