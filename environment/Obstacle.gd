@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 			shaking_noise.get_noise_1d(offset),
 			shaking_noise.get_noise_1d(-offset)
 		) * 8
-		look_at(position + Vector2.RIGHT.rotated(0.05 * shaking_noise.get_noise_1d(offset)))
+		look_at(global_position + Vector2.RIGHT.rotated(0.05 * shaking_noise.get_noise_1d(offset)))
 		
 		
 

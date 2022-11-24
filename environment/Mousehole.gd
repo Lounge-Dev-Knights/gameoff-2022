@@ -12,9 +12,9 @@ func _ready() -> void:
 func spawn_mouse() -> void:
 	mouses -= 1
 	var mouse = preload("res://environment/Mouse.tscn").instance()
-	mouse.set_as_toplevel(true)
-	mouse.global_position = global_position
-	add_child(mouse)
+	mouse.position = position
+	
+	get_parent().add_child(mouse)
 
 
 func _on_Spawntrigger_timeout() -> void:
