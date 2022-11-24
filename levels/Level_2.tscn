@@ -259,13 +259,13 @@ position = Vector2( 1505, 384 )
 position = Vector2( 289, 288 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1824, 1024 )
+position = Vector2( 97, 997 )
 
 [node name="Mousehole3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1824, 128 )
 
 [node name="Mousehole4" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1793, 576 )
+position = Vector2( 1827, 998 )
 mouses = 1
 
 [node name="CupboardHorizontal" parent="." instance=ExtResource( 11 )]
