@@ -4,7 +4,7 @@
 [ext_resource path="res://elephant/elephant_4Legs.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 96.0
+radius = 63.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 512.0

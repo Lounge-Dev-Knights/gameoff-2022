@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/stairs.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128, 64 )
@@ -7,8 +9,14 @@ extents = Vector2( 128, 64 )
 collision_layer = 0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 0, -3.8147e-06 )
+scale = Vector2( 1, 1.5 )
 color = Color( 0.309804, 0.309804, 0.309804, 1 )
 polygon = PoolVector2Array( -128, -64, 128, -64, 128, 64, -128, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Stairs" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
