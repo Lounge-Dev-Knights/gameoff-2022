@@ -4,13 +4,14 @@
 [ext_resource path="res://environment/Mousehole.png" type="Texture" id=2]
 
 [node name="Mousehole" type="Node2D" groups=["mouseholes"]]
-scale = Vector2( 0.02, 0.02 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 
 [node name="Spawntrigger" type="Timer" parent="."]
 autostart = true
 
 [node name="Mousehole" type="Sprite" parent="."]
+position = Vector2( 0, -160 )
 texture = ExtResource( 2 )
 
 [connection signal="timeout" from="Spawntrigger" to="." method="_on_Spawntrigger_timeout"]
