@@ -20,6 +20,7 @@ var camera := Camera2D.new()
 func _ready() -> void:
 	camera.current = true
 	camera.position = $Elephant.position
+	camera_target_position = $Elephant.position
 	add_child(camera)
 	
 	if $ItemSelection != null:

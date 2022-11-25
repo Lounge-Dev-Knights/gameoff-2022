@@ -34,8 +34,6 @@ func _process(delta: float) -> void:
 	if state == State.SHAKING:
 		var offset = OS.get_ticks_msec() * 0.2
 		
-		
-		
 		position = origin + Vector2(
 			shaking_noise.get_noise_1d(offset),
 			shaking_noise.get_noise_1d(-offset)
@@ -55,7 +53,7 @@ func hit() -> void:
 func _on_Cupboard_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		get_tree().set_input_as_handled()
-		state = State.SHAKING
+		state = State.NORMAL
 		$Timer.stop()
 
 
