@@ -11,10 +11,14 @@ var preloaded_scenes = {
 
 var current_scene = null
 
+
+var transition_scene := preload("res://SceneTransition.tscn").instance()
+
 func _ready() -> void:
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 	
+	add_child(transition_scene)
 
 func goto_scene(path: String, properties: Dictionary = {}) -> void:
 	# This function will usually be called from a signal callback,
@@ -25,8 +29,14 @@ func goto_scene(path: String, properties: Dictionary = {}) -> void:
 
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
+	
+	transition_scene.get_node("AnimationPlayer").play("close")
+	
+	yield(transition_scene.get_node("AnimationPlayer"), "animation_finished")
 
 	call_deferred("_deferred_goto_scene", path, properties)
+	
+	transition_scene.get_node("AnimationPlayer").play("open")
 
 
 func _deferred_goto_scene(path: String, properties: Dictionary) -> void:
