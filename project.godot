@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Camera2D",
+"class": "ShakeCamera",
+"language": "GDScript",
+"path": "res://ShakeCamera.gd"
+} ]
+_global_script_class_icons={
+"ShakeCamera": ""
+}
+
 [application]
 
 config/name="gameoff-2022"

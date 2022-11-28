@@ -14,13 +14,16 @@ export(int) var grasspots := 0
 
 var camera_target_position := Vector2()
 
-var camera := Camera2D.new()
+var camera := Position2D.new()
+var camera_instance := ShakeCamera.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	camera.current = true
+	camera_instance.current = true
+	camera_instance.rotating = true
 	camera.position = $Elephant.position
 	camera_target_position = $Elephant.position
+	camera.add_child(camera_instance)
 	add_child(camera)
 	
 	if $ItemSelection != null:
