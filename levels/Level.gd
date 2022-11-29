@@ -11,6 +11,7 @@ export(int) var bananas := 0
 export(int) var apples := 0
 export(int) var grasspots := 0
 
+var following_levels := []
 
 var camera_target_position := Vector2()
 
@@ -53,8 +54,11 @@ func update_current_camera_position() -> void:
 	
 
 func finish_level() -> void:
-	get_tree().change_scene("res://Titlescreen.tscn")
-
+	if len(following_levels) > 0:
+		var next_level = following_levels.pop_front()
+		SceneLoader.goto_scene(next_level, {"following_levels": following_levels})
+	else:
+		SceneLoader.goto_scene("res://Titlescreen.tscn")
 
 func handle_drop_item() -> void:
 	if active_item != null:
