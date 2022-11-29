@@ -19,4 +19,4 @@ func spawn_mouse() -> void:
 
 func _on_Spawntrigger_timeout() -> void:
 	if mouses > 0 and randf() < SPAWN_CHANCE:
-		pass # spawn_mouse()
+		spawn_mouse()
