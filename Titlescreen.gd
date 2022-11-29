@@ -18,3 +18,10 @@ func _ready():
 		$VBoxContainer.add_child(button)
 
 
+
+
+
+
+func _on_Play_pressed() -> void:
+	var next_level = levels.pop_front()
+	SceneLoader.goto_scene(next_level, {"following_levels": levels})

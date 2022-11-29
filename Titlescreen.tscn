@@ -25,3 +25,10 @@ margin_bottom = 557.0
 margin_right = 191.0
 margin_bottom = 33.0
 text = "Game Off 2022"
+
+[node name="Play" type="Button" parent="VBoxContainer/Label"]
+margin_right = 8.0
+margin_bottom = 41.0
+text = "Play"
+
+[connection signal="pressed" from="VBoxContainer/Label/Play" to="." method="_on_Play_pressed"]
