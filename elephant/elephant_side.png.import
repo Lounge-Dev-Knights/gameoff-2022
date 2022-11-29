@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/elephant_side.png-836d532a6615f0c00941b74695f7cc66.stex"
+path="res://.import/elephant_side.png-24620dce98f1155eea0e88b625bf4a6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/elephant_side.png"
-dest_files=[ "res://.import/elephant_side.png-836d532a6615f0c00941b74695f7cc66.stex" ]
+source_file="res://elephant/elephant_side.png"
+dest_files=[ "res://.import/elephant_side.png-24620dce98f1155eea0e88b625bf4a6a.stex" ]
 
 [params]
 
