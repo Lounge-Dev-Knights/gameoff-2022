@@ -59,6 +59,8 @@ func _on_Cupboard_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 
 func _on_Timer_timeout() -> void:
 	state = State.BROKEN
+	get_tree().call_group("cost_counter", "add_cost", 100)
+	
 	modulate = Color.darkgray
 	if $Dustcloud != null:
 		$Dustcloud.emitting = true
