@@ -18,7 +18,7 @@ var camera_target_position := Vector2()
 var camera := Position2D.new()
 var camera_instance := ShakeCamera.new()
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	camera_instance.current = true
 	camera_instance.rotating = true
@@ -27,12 +27,15 @@ func _ready() -> void:
 	camera.add_child(camera_instance)
 	add_child(camera)
 	
+	add_child(preload("res://CostCounter.tscn").instance())
+	
 	if $ItemSelection != null:
 		$ItemSelection.connect("item_selected", self, "_on_ItemSelection_item_selected")
 	
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	for staircase in get_tree().get_nodes_in_group("staircases"):
 		(staircase as Area2D).connect("body_entered", self, "_staircase_body_entered")
+
 
 func _process(delta: float) -> void:
 	update_current_camera_position()
@@ -51,7 +54,7 @@ func update_current_camera_position() -> void:
 	
 	if nearest_camera_position.distance_to($Elephant.position) < camera_target_position.distance_to($Elephant.position) + ROOM_CHANGE_THRESHOLD:
 		camera_target_position = nearest_camera_position
-	
+
 
 func finish_level() -> void:
 	if len(following_levels) > 0:
@@ -60,9 +63,12 @@ func finish_level() -> void:
 	else:
 		SceneLoader.goto_scene("res://Titlescreen.tscn")
 
+
 func handle_drop_item() -> void:
 	if active_item != null:
 		var item = active_item.instance()
+		print(str(get_tree().get_nodes_in_group("cost_counter")))
+		get_tree().call_group("cost_counter", "add_cost", 100)
 		item.position = get_local_mouse_position()
 		$items.add_child(item)
 
