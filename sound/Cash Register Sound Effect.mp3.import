@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Cash Register Sound Effect.mp3-ca6b4d4b9f2029b19c42c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
