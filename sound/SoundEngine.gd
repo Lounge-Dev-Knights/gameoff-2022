@@ -48,8 +48,8 @@ const sounds = {
 		"volume": -0
 	},
 	"Register": {
-		"stream": preload("res://sound/Cash Register Sound Effect.mp3"),
-		"volume": -0
+		"stream": preload("res://sound/Cash Register Sound Effect.wav"),
+		"volume": -15
 	}
 }
 
