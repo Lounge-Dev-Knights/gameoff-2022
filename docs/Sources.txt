@@ -1,2 +1,7 @@
 Sound Effect from pixabay -> El_Scream, changed
+
 Lift sound effects from http://audionautix.com/ -> Lift_open and Lift_close, changed
+
+Cash Register Sound Effect
+SoundFX
+https://www.youtube.com/watch?v=kXV7OLDOpao
