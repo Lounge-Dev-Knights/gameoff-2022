@@ -46,6 +46,10 @@ const sounds = {
 	"Close": {
 		"stream": preload("res://sound/Lift_close.wav"),
 		"volume": -0
+	},
+	"Register": {
+		"stream": preload("res://sound/Cash Register Sound Effect.mp3"),
+		"volume": -0
 	}
 }
 
