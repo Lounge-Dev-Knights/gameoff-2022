@@ -32,6 +32,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "close"
+length = 3.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left:position")
 tracks/0/interp = 2
@@ -39,7 +40,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 3.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -480, 536 ), Vector2( 480, 536 ) ]
@@ -51,7 +52,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 3.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2400, 536 ), Vector2( 1440, 536 ) ]
@@ -59,6 +60,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "open"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left:position")
 tracks/0/interp = 2
@@ -66,7 +68,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 480, 536 ), Vector2( -480, 536 ) ]
@@ -78,7 +80,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1440, 536 ), Vector2( 2400, 536 ) ]
