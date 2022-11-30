@@ -67,10 +67,11 @@ func finish_level() -> void:
 func handle_drop_item() -> void:
 	if active_item != null:
 		var item = active_item.instance()
-		print(str(get_tree().get_nodes_in_group("cost_counter")))
-		get_tree().call_group("cost_counter", "add_cost", 100)
+		
+		get_tree().call_group("item_selectors", "on_dropped", active_item)
 		item.position = get_local_mouse_position()
 		$items.add_child(item)
+		active_item = null
 
 
 func _staircase_body_entered(body: Node) -> void:
