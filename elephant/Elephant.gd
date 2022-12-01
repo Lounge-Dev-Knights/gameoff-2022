@@ -13,6 +13,8 @@ var state: int
 
 var target: Node2D
 
+onready var animation_player = $elephant_side/AnimationPlayer
+
 var velocity: Vector2
 
 
@@ -50,13 +52,30 @@ func _process_state(delta: float) -> void:
 	_process_music(delta)
 	
 	$Label.text = State.keys()[state]
-	if velocity.x != 0.0:
-		$LN_4elephant.scale.x = abs($LN_4elephant.scale.x) * sign(velocity.x)
+	
+	
+	
+	
+	if abs(velocity.x) > abs(velocity.y):
+		animation_player = $elephant_side/AnimationPlayer
+		$elephant_side.show()
+		$elephant_up.hide()
+		$elephant_side.scale.x = abs($elephant_side.scale.x) * sign(velocity.x)
+	elif velocity.y > 0:
+		animation_player = $elephant_down/AnimationPlayer
+		$elephant_down.show()
+		$elephant_up.hide()
+		$elephant_side.hide()
+	elif velocity.y < 0:
+		animation_player = $elephant_up/AnimationPlayer
+		$elephant_up.show()
+		$elephant_down.hide()
+		$elephant_side.hide()
+		
 	
 	match state:
 		State.IDLE:
-			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
-			$LN_4elephant/AnimationPlayer.play("rest")
+			animation_player.play("rest")
 			
 			velocity *= (0.9 * delta)
 			check_items()
@@ -74,8 +93,7 @@ func _process_state(delta: float) -> void:
 				
 				# target = Vector2(rand_range(0, 640), rand_range(0, 300))
 		State.WALKING:
-			$LN_4elephant/AnimationPlayer.playback_speed = 1.0
-			$LN_4elephant/AnimationPlayer.play("walk")
+			animation_player.play("walk")
 			
 			
 			check_items()
@@ -91,8 +109,7 @@ func _process_state(delta: float) -> void:
 				SoundEngine.play_sound("El_Eat")
 				target = null
 		State.FLEEING:
-			$LN_4elephant/AnimationPlayer.play("walk")
-			$LN_4elephant/AnimationPlayer.playback_speed = 2.0
+			animation_player.play("stomp")
 			
 			
 			# dont change velocity if target disappeared
@@ -100,7 +117,7 @@ func _process_state(delta: float) -> void:
 				velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
 			
 			# time in state FLEEING
-			if randf() < 0.8* delta:
+			if randf() < 0.8 * delta:
 				state = State.IDLE
 
 
