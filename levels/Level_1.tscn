@@ -42,16 +42,13 @@ position = Vector2( 1, 704 )
 position = Vector2( 1, 896 )
 
 [node name="Wall59" parent="objects" instance=ExtResource( 4 )]
-position = Vector2( 1, 800 )
+position = Vector2( 1, 768 )
 
 [node name="Wall60" parent="objects" instance=ExtResource( 4 )]
-position = Vector2( 1, 992 )
-
-[node name="Wall61" parent="objects" instance=ExtResource( 4 )]
-position = Vector2( 1, 1088 )
+position = Vector2( 1, 1024 )
 
 [node name="Wall70" parent="objects" instance=ExtResource( 4 )]
-position = Vector2( 1, 1184 )
+position = Vector2( 1, 1152 )
 
 [node name="Wall49" parent="objects" instance=ExtResource( 4 )]
 position = Vector2( 1857, 128 )
@@ -210,7 +207,7 @@ position = Vector2( 1792, 1152 )
 position = Vector2( 1, 1152 )
 
 [node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 161, 704 )
+position = Vector2( 609, 768 )
 
 [node name="Staircase" parent="." instance=ExtResource( 9 )]
 position = Vector2( 256, 256 )
