@@ -18,8 +18,10 @@ func _ready():
 	for level in levels:
 		var button = Button.new()
 		button.text = level.get_file().get_basename()
+		button.connect("mouse_entered", self, "_on_Play_mouse_entered")
+		button.connect("pressed", SoundEngine, "play_sound", ["MenuButtonSound"])
 		button.connect("pressed", SceneLoader, "goto_scene", [level, {"following_levels": []}])
-		$VBoxContainer.add_child(button)
+		$CanvasLayer/VBoxContainer.add_child(button)
 
 
 
@@ -27,5 +29,10 @@ func _ready():
 
 
 func _on_Play_pressed() -> void:
+	SoundEngine.play_sound("MenuButtonSound")
 	var next_level = levels.pop_front()
 	SceneLoader.goto_scene(next_level, {"following_levels": levels})
+
+
+func _on_Play_mouse_entered() -> void:
+	SoundEngine.play_sound("MenuButtonHoverSound")

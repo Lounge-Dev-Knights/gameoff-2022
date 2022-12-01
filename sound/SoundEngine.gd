@@ -41,7 +41,7 @@ const sounds = {
 	},
 	"Ding": {
 		"stream": preload("res://sound/Elevator Bell Ding.wav"),
-		"volume": -0
+		"volume": -20
 	},
 	"Register": {
 		"stream": preload("res://sound/Cash Register Sound Effect.wav"),
