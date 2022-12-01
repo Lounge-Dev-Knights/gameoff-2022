@@ -2,7 +2,7 @@ extends Node2D
 
 
 const ROOM_CHANGE_THRESHOLD = 100
-const CAMERA_SNAP = Vector2(1920, 1080) / 2
+const CAMERA_SNAP = Vector2(1920, 1080) / 4
 
 
 var active_item: PackedScene
@@ -39,7 +39,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	update_current_camera_position()
-	camera.position = camera.position.linear_interpolate(camera_target_position, 0.05)
+	camera.position = camera.position.linear_interpolate(camera_target_position, delta * 5)
 
 
 func _unhandled_input(event: InputEvent) -> void:
