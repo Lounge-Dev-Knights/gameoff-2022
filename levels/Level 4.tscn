@@ -4,13 +4,13 @@
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/Obstacle1x2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Obstacle2x2_blue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://levels/FloorBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/Staircase.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/Mousehole.tscn" type="PackedScene" id=10]
 [ext_resource path="res://environment/Obstacle1x1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://environment/Obstacle2x2.tscn" type="PackedScene" id=13]
 
 [node name="Testlevel" type="YSort"]
 position = Vector2( 4736, 3648 )
@@ -167,9 +167,6 @@ position = Vector2( 1665, 128 )
 [node name="CupboardHorizontal23" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 1792, 128 )
 
-[node name="CupboardHorizontal40" parent="objects" instance=ExtResource( 13 )]
-position = Vector2( 192, 1024 )
-
 [node name="CupboardHorizontal42" parent="objects" instance=ExtResource( 12 )]
 position = Vector2( 577, 512 )
 
@@ -264,3 +261,6 @@ position = Vector2( 1216, 832 )
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 64, 1536 )
 scale = Vector2( 28, 2 )
+
+[node name="CupboardHorizontal2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 110, 1022 )
