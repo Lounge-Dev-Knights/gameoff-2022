@@ -22,7 +22,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Cupboard" type="Sprite" parent="."]
-position = Vector2( 32, -96 )
+position = Vector2( 32, -154 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -48 )
