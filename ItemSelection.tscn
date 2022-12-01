@@ -48,27 +48,28 @@ custom_constants/separation = 32
 
 [node name="Grasspot" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
 margin_bottom = 165.0
-cost = 50
+cost = 10
 texture = ExtResource( 3 )
 item = ExtResource( 5 )
 
 [node name="Apple" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
 margin_top = 197.0
 margin_bottom = 362.0
+cost = 20
 texture = ExtResource( 2 )
 item = ExtResource( 6 )
 
 [node name="Banana" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
 margin_top = 394.0
 margin_bottom = 559.0
-cost = 200
+cost = 30
 texture = ExtResource( 9 )
 item = ExtResource( 8 )
 
 [node name="Chili" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
 margin_top = 591.0
 margin_bottom = 756.0
-cost = 20
+cost = 80
 texture = ExtResource( 12 )
 item = ExtResource( 11 )
 
