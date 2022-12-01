@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ItemSelection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/Staircase.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/Mousehole.tscn" type="PackedScene" id=10]
-[ext_resource path="res://environment/Obstacle1x1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://environment/Obstacle2x2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=14]
@@ -262,9 +261,6 @@ position = Vector2( 1792, 1216 )
 [node name="Mousehole4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 64 )
 mouses = 1
-
-[node name="CupboardHorizontal" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1313, 640 )
 
 [node name="Wall" parent="." instance=ExtResource( 14 )]
 modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://environment/Obstacle1x1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/Obstacle1x1_green.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/FloorBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/Staircase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/Obstacle1x2.tscn" type="PackedScene" id=5]
@@ -12,7 +12,7 @@
 [ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=10]
 
 [node name="Testlevel" type="YSort"]
-position = Vector2( -1, 0 )
+position = Vector2( 4281, 2070 )
 script = ExtResource( 9 )
 
 [node name="items" type="Node2D" parent="."]
@@ -24,9 +24,6 @@ position = Vector2( 1, 224 )
 
 [node name="Wall47" parent="objects" instance=ExtResource( 5 )]
 position = Vector2( 1, 320 )
-
-[node name="Wall48" parent="objects" instance=ExtResource( 5 )]
-position = Vector2( 1, 128 )
 
 [node name="Wall54" parent="objects" instance=ExtResource( 5 )]
 position = Vector2( 1, 512 )
@@ -54,9 +51,6 @@ position = Vector2( 1, 1088 )
 
 [node name="Wall70" parent="objects" instance=ExtResource( 5 )]
 position = Vector2( 1, 1184 )
-
-[node name="Wall49" parent="objects" instance=ExtResource( 5 )]
-position = Vector2( 1857, 128 )
 
 [node name="Wall50" parent="objects" instance=ExtResource( 5 )]
 position = Vector2( 1857, 224 )
@@ -196,9 +190,9 @@ position = Vector2( 1824, 128 )
 position = Vector2( 1793, 1056 )
 mouses = 1
 
-[node name="CupboardHorizontal" parent="." instance=ExtResource( 2 )]
-position = Vector2( 353, 704 )
-
 [node name="ItemSelection" parent="." instance=ExtResource( 6 )]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[node name="CupboardHorizontal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 135, 767 )
