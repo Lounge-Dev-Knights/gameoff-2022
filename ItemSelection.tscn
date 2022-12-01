@@ -9,43 +9,41 @@
 [ext_resource path="res://ItemSelectionItem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://items/Banana.tscn" type="PackedScene" id=8]
 [ext_resource path="res://graphics/BANANA1 (2).png" type="Texture" id=9]
-[ext_resource path="res://UI/ui_background.png" type="Texture" id=10]
+[ext_resource path="res://UI/ui_background_v.png" type="Texture" id=10]
 [ext_resource path="res://items/Chili.tscn" type="PackedScene" id=11]
 [ext_resource path="res://graphics/chilli.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 1024, 256 )
+region_rect = Rect2( 0, 0, 256, 1024 )
 
 [node name="ItemSelection" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -14.0
-margin_top = -42.0
-margin_right = 14.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -394.0
+margin_right = 160.0
+margin_bottom = 394.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource( 4 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-margin_right = 640.0
-margin_bottom = 197.0
+margin_right = 160.0
+margin_bottom = 788.0
 custom_constants/margin_right = 16
 custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="Items" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="Items" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 624.0
-margin_bottom = 181.0
+margin_right = 144.0
+margin_bottom = 772.0
 custom_constants/separation = 32
 
 [node name="Grasspot" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
@@ -55,24 +53,21 @@ texture = ExtResource( 3 )
 item = ExtResource( 5 )
 
 [node name="Apple" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
-margin_left = 160.0
-margin_right = 288.0
-margin_bottom = 165.0
+margin_top = 197.0
+margin_bottom = 362.0
 texture = ExtResource( 2 )
 item = ExtResource( 6 )
 
 [node name="Banana" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
-margin_left = 320.0
-margin_right = 448.0
-margin_bottom = 165.0
+margin_top = 394.0
+margin_bottom = 559.0
 cost = 200
 texture = ExtResource( 9 )
 item = ExtResource( 8 )
 
 [node name="Chili" parent="PanelContainer/MarginContainer/Items" instance=ExtResource( 7 )]
-margin_left = 480.0
-margin_right = 608.0
-margin_bottom = 165.0
+margin_top = 591.0
+margin_bottom = 756.0
 cost = 20
 texture = ExtResource( 12 )
 item = ExtResource( 11 )
