@@ -6,6 +6,7 @@
 extents = Vector2( 128, 64 )
 
 [node name="Staircase" type="Area2D" groups=["staircases"]]
+z_index = -1
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
