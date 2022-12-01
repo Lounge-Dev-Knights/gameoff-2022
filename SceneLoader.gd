@@ -37,7 +37,15 @@ func goto_scene(path: String, properties: Dictionary = {}) -> void:
 
 	call_deferred("_deferred_goto_scene", path, properties)
 	
+	yield(get_tree().create_timer(0.5), "timeout")
 	SoundEngine.play_sound("Ding")
+	
+	if "following_levels" in properties:
+		transition_scene.floor_number = len(properties["following_levels"]) + 1
+	else:
+		transition_scene.floor_number = 0
+	
+	yield(get_tree().create_timer(0.5), "timeout")
 	
 	transition_scene.get_node("AnimationPlayer").play("open")
 
