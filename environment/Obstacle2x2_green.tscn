@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
 
-[node name="CupboardHorizontal" type="StaticBody2D"]
+[node name="CupboardHorizontal2" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 3
 input_pickable = true
