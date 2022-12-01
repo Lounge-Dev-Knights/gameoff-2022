@@ -28,6 +28,7 @@ func _ready() -> void:
 	add_child(camera)
 	
 	add_child(preload("res://CostCounter.tscn").instance())
+	add_child(preload("res://ToTitlescreenButton.tscn").instance())
 	
 	if $ItemSelection != null:
 		$ItemSelection.connect("item_selected", self, "_on_ItemSelection_item_selected")

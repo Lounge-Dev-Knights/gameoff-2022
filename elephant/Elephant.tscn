@@ -34,14 +34,12 @@ position = Vector2( -1, 0 )
 shape = SubResource( 3 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = -18.0
 margin_top = -47.0
 margin_right = 22.0
 margin_bottom = -33.0
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ItemDetectionArea" type="Area2D" parent="."]
 collision_layer = 0
