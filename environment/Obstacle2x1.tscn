@@ -5,7 +5,7 @@
 [ext_resource path="res://environment/Dustcloud.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 32 )
+extents = Vector2( 64, 64 )
 
 [node name="CupboardHorizontal" type="StaticBody2D"]
 collision_layer = 8
@@ -14,7 +14,7 @@ input_pickable = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 64, -32 )
+position = Vector2( 64, -64 )
 shape = SubResource( 1 )
 
 [node name="Dustcloud" parent="." instance=ExtResource( 3 )]
