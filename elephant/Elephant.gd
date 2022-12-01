@@ -60,6 +60,7 @@ func _process_state(delta: float) -> void:
 		animation_player = $elephant_side/AnimationPlayer
 		$elephant_side.show()
 		$elephant_up.hide()
+		$elephant_down.hide()
 		$elephant_side.scale.x = abs($elephant_side.scale.x) * sign(velocity.x)
 	elif velocity.y > 0:
 		animation_player = $elephant_down/AnimationPlayer
