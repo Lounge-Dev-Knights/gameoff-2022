@@ -13,8 +13,12 @@ var levels = [
 	"res://levels/Level 8.tscn",
 ]
 
+onready var total_cost = $CanvasLayer/Cost
+
 
 func _ready():
+	total_cost.text = str("Total cost of damage: $%d" % Scores.total_cost)
+	
 	for level in levels:
 		var button = Button.new()
 		button.text = level.get_file().get_basename()
@@ -22,10 +26,6 @@ func _ready():
 		button.connect("pressed", SoundEngine, "play_sound", ["MenuButtonSound"])
 		button.connect("pressed", SceneLoader, "goto_scene", [level, {"following_levels": []}])
 		$CanvasLayer/VBoxContainer.add_child(button)
-
-
-
-
 
 
 func _on_Play_pressed() -> void:

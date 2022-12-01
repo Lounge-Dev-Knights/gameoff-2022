@@ -17,7 +17,7 @@ var camera_target_position := Vector2()
 
 var camera := Position2D.new()
 var camera_instance := ShakeCamera.new()
-
+var cost_counter
 
 func _ready() -> void:
 	camera_instance.current = true
@@ -27,7 +27,8 @@ func _ready() -> void:
 	camera.add_child(camera_instance)
 	add_child(camera)
 	
-	add_child(preload("res://CostCounter.tscn").instance())
+	cost_counter = preload("res://CostCounter.tscn").instance()
+	add_child(cost_counter)
 	add_child(preload("res://ToTitlescreenButton.tscn").instance())
 	
 	if $ItemSelection != null:
@@ -58,6 +59,7 @@ func update_current_camera_position() -> void:
 
 
 func finish_level() -> void:
+	Scores.total_cost += cost_counter.cost
 	if len(following_levels) > 0:
 		var next_level = following_levels.pop_front()
 		SceneLoader.goto_scene(next_level, {"following_levels": following_levels})
