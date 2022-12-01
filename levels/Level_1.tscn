@@ -210,7 +210,7 @@ position = Vector2( 1792, 1152 )
 position = Vector2( 1, 1152 )
 
 [node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 321, 832 )
+position = Vector2( 161, 704 )
 
 [node name="Staircase" parent="." instance=ExtResource( 9 )]
 position = Vector2( 256, 256 )

@@ -99,7 +99,8 @@ func _process_state(delta: float) -> void:
 			if is_instance_valid(target):
 				velocity = -to_local(target.global_position).normalized() * MAX_SPEED * 2
 			
-			if randf() < 0.5 * delta:
+			# time in state FLEEING
+			if randf() < 0.8* delta:
 				state = State.IDLE
 
 
