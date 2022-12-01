@@ -337,11 +337,11 @@ position = Vector2( 1152, 1664 )
 [node name="CupboardHorizontal71" parent="objects" instance=ExtResource( 3 )]
 position = Vector2( 384, 1664 )
 
-[node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 960, 960 )
-
 [node name="Staircase" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1664, 1408 )
+
+[node name="Elephant" parent="." instance=ExtResource( 8 )]
+position = Vector2( 960, 960 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1408, 1536 )

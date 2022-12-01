@@ -250,11 +250,11 @@ position = Vector2( 960, 1280 )
 [node name="Wall90" parent="objects" instance=ExtResource( 4 )]
 position = Vector2( 960, 1408 )
 
-[node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1152, 192 )
-
 [node name="Staircase" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2496, 0 )
+
+[node name="Elephant" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1152, 192 )
 
 [node name="Mousehole3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1792, 1216 )

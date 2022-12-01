@@ -180,11 +180,11 @@ modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 position = Vector2( 65, 1056 )
 scale = Vector2( 29, 2 )
 
-[node name="Elephant" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1537, 320 )
-
 [node name="Staircase" parent="." instance=ExtResource( 4 )]
 position = Vector2( 289, 288 )
+
+[node name="Elephant" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1537, 320 )
 
 [node name="Mousehole2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 129, 1056 )
