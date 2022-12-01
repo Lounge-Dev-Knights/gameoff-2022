@@ -31,16 +31,13 @@ func goto_scene(path: String, properties: Dictionary = {}) -> void:
 	# we can be sure that no code from the current scene is running:
 	
 	transition_scene.get_node("AnimationPlayer").play("close")
-	SoundEngine.play_sound("Close")
+	#SoundEngine.play_sound("Close")
 	
 	yield(transition_scene.get_node("AnimationPlayer"), "animation_finished")
 
 	call_deferred("_deferred_goto_scene", path, properties)
 	
-	SoundEngine.play_sound("Open")
-	
-	yield(get_tree().create_timer(2), "timeout")
-	#timer for sound to open lift, do not change
+	SoundEngine.play_sound("Ding")
 	
 	transition_scene.get_node("AnimationPlayer").play("open")
 

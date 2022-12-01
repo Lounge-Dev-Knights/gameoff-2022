@@ -39,12 +39,8 @@ const sounds = {
 		"stream": preload("res://sound/El_scream_2.wav"),
 		"volume": -0
 	},
-	"Open": {
-		"stream": preload("res://sound/Lift_open.wav"),
-		"volume": -0
-	},
-	"Close": {
-		"stream": preload("res://sound/Lift_close.wav"),
+	"Ding": {
+		"stream": preload("res://sound/Elevator Bell Ding.wav"),
 		"volume": -0
 	},
 	"Register": {
