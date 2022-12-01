@@ -2,6 +2,7 @@ extends CenterContainer
 
 
 var levels = [
+	"res://levels/Tutorial.tscn",
 	"res://levels/Level 1.tscn",
 	"res://levels/Level 2.tscn",
 	"res://levels/Level 3.tscn",

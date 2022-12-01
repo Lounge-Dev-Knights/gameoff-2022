@@ -1,0 +1,208 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://ItemSelection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://environment/Obstacle2x2_green.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/Obstacle1x2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Obstacle1x1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/FloorBackground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/Grasspot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://elephant/Elephant.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/Apple.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/Mousehole.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/Banana.tscn" type="PackedScene" id=11]
+[ext_resource path="res://environment/Obstacle2x1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://items/Chili.tscn" type="PackedScene" id=13]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/default_theme.tres" type="Theme" id=15]
+
+[node name="Testlevel" type="YSort"]
+script = ExtResource( 2 )
+
+[node name="items" type="Node2D" parent="."]
+position = Vector2( -61, -202 )
+
+[node name="objects" type="YSort" parent="."]
+
+[node name="Wall46" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 256 )
+
+[node name="Wall48" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 128 )
+
+[node name="Wall54" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 384 )
+
+[node name="Wall56" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 512 )
+
+[node name="Wall58" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 768 )
+
+[node name="Wall59" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 640 )
+
+[node name="Wall60" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 896 )
+
+[node name="Wall61" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 1024 )
+
+[node name="Wall70" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 0, 1152 )
+
+[node name="Wall49" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 128 )
+
+[node name="Wall50" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 512 )
+
+[node name="Wall62" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 640 )
+
+[node name="Wall63" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 256 )
+
+[node name="Wall64" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 768 )
+
+[node name="Wall65" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 384 )
+
+[node name="Wall66" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 1024 )
+
+[node name="Wall67" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 896 )
+
+[node name="Wall68" parent="objects" instance=ExtResource( 4 )]
+position = Vector2( 1728, 1152 )
+
+[node name="CupboardHorizontal" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 412, 677 )
+
+[node name="CupboardHorizontal9" parent="objects" instance=ExtResource( 12 )]
+
+[node name="CupboardHorizontal10" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 128, 0 )
+
+[node name="CupboardHorizontal11" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 255, 0 )
+
+[node name="CupboardHorizontal12" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 384, 0 )
+
+[node name="CupboardHorizontal13" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 512, 0 )
+
+[node name="CupboardHorizontal14" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 640, 0 )
+
+[node name="CupboardHorizontal15" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 768, 0 )
+
+[node name="CupboardHorizontal16" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 896, 0 )
+
+[node name="CupboardHorizontal17" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1024, 0 )
+
+[node name="CupboardHorizontal18" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1152, 0 )
+
+[node name="CupboardHorizontal19" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1280, 0 )
+
+[node name="CupboardHorizontal20" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1408, 0 )
+
+[node name="CupboardHorizontal21" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1664, 0 )
+
+[node name="CupboardHorizontal23" parent="objects" instance=ExtResource( 12 )]
+position = Vector2( 1536, 0 )
+
+[node name="CupboardHorizontal2" parent="objects" instance=ExtResource( 3 )]
+position = Vector2( 756, 572 )
+
+[node name="CupboardHorizontal3" parent="objects" instance=ExtResource( 5 )]
+position = Vector2( 692, 978 )
+
+[node name="Elephant" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1538, 264 )
+
+[node name="Mousehole2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 149, 600 )
+mouses = 1
+
+[node name="Mousehole3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 276, 46 )
+
+[node name="Grasspot" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1040, 648 )
+
+[node name="Chilli" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1501, 792 )
+
+[node name="Wall" parent="." instance=ExtResource( 14 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 64, 1024 )
+scale = Vector2( 26, 2 )
+
+[node name="Apple2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1044, 305 )
+
+[node name="Banana" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1056, 45 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1124.0
+margin_top = 23.0
+margin_right = 1582.0
+margin_bottom = 56.0
+theme = ExtResource( 15 )
+text = "The elephant like bananas the most."
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1091.0
+margin_top = 295.0
+margin_right = 1549.0
+margin_bottom = 328.0
+theme = ExtResource( 15 )
+text = "... apples are also good"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1096.0
+margin_top = 632.0
+margin_right = 1554.0
+margin_bottom = 665.0
+theme = ExtResource( 15 )
+text = "... and plants for digestion."
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 1159.0
+margin_top = 790.0
+margin_right = 1617.0
+margin_bottom = 823.0
+theme = ExtResource( 15 )
+text = "But he haaaates chillies!"
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 254.0
+margin_top = 718.0
+margin_right = 985.0
+margin_bottom = 751.0
+theme = ExtResource( 15 )
+text = "Click on shaking cupboards to save them from destruction!"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 277.0
+margin_right = 623.0
+margin_bottom = 310.0
+theme = ExtResource( 15 )
+text = "You can grab the mice with the mouse!"
+
+[node name="ItemSelection" parent="." instance=ExtResource( 1 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]
