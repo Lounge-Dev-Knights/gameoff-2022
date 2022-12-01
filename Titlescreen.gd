@@ -16,7 +16,7 @@ func _ready():
 	for level in levels:
 		var button = Button.new()
 		button.text = level.get_file().get_basename()
-		button.connect("pressed", SceneLoader, "goto_scene", [level])
+		button.connect("pressed", SceneLoader, "goto_scene", [level, {"following_levels": []}])
 		$VBoxContainer.add_child(button)
 
 

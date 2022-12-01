@@ -25,6 +25,7 @@ margin_bottom = 580.0
 margin_right = 191.0
 margin_bottom = 33.0
 text = "Game Off 2022"
+align = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 margin_top = 37.0

@@ -22,6 +22,6 @@ margin_top = 132.0
 margin_right = 128.0
 margin_bottom = 146.0
 text = "100$"
-align = 2
+align = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
