@@ -8,3 +8,7 @@ export var attraction = 10
 func _ready() -> void:
 	pass
 
+
+
+func _on_Grasspot_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
